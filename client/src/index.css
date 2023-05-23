@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+
+:root {
+    --clr-background-primary: #131114 ;
+    --clr-background-secondary: rgb(216, 209, 203);
+    --clr-background-tertiary: #fff;
+    --clr-background-quaternary: #1b1b1be8;
+
+    --clr-font-primary: #fff;
+    --clr-font-secondary: #131114;
+
+    --fs-xl: 2rem; 
+    --fs-600: 1.5rem;
+    --fs-500: 1rem;
+    --fs-400: 0.85rem;
+    --fs-300: 0.75rem;
+
+    --ff-logo: 'Sail', sans-serif;
+    --ff-nav: 'Dosis', sans-serif;
+}
+
+@media (max-width: 40rem) {
+  :root {
+    --fs-xl: 2.8rem; 
+    --fs-600: 2rem;
+    --fs-500: 1.125rem;
+    --fs-400: 1rem;
+    --fs-300: 0.85rem;
+  }
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+header {
+  background-color: var(--clr-background-primary);
+  opacity: 0.9;
+}
+.logo-text,
+a {
+  color: var(--clr-font-primary);
+}
+.logo-text {
+  font-family: var(--ff-logo);
+  font-size: var(--fs-600);
+}
+a {
+  font-family: var(--ff-nav);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+  display: flex;
+  padding-block: 0.2rem;
+  padding-inline: 2rem;
+}
+nav {
+  width: 100%;
+}
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 3rem;
+}
+.logo-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}

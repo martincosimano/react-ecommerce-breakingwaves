@@ -1,0 +1,24 @@
+{
+  "name": "reactexpress",
+  "version": "1.0.0",
+  "description": "reactexpress-app",
+  "main": "server.js",
+  "scripts": {
+    "full-install": "npm install && cd ../client && npm install",
+    "client-install": "cd ../client && npm install",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "cd ../client && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "Martín Cosimano",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^1.14.6"
+  },
+  "dependencies": {
+    "concurrently": "^3.5.1",
+    "cors": "^2.8.5",
+    "express": "^4.16.2"
+  }
+}
