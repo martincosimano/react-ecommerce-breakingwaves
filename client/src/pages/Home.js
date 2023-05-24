@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 export default function Home() {
     return (
-        <main>
-            <p>Some main text.</p>
-        </main>
+        <main className="bg-img"></main>
     )
 }

@@ -1,12 +1,3 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
-* {
-  box-sizing: border-box;
-}
-
 :root {
     --clr-background-primary: #131114 ;
     --clr-background-secondary: rgb(216, 209, 203);
@@ -39,12 +30,16 @@ body {
 /******************************************
 /* BASE STYLES
 /*******************************************/
+
+/* GENERAL */
 li {
   list-style: none;
 }
 a {
   text-decoration: none;
 }
+
+/* HEADER */
 header {
   background-color: var(--clr-background-primary);
   opacity: 0.9;
@@ -63,9 +58,24 @@ a {
   font-weight: 600;
 }
 
+/* HOME */
+
+
 /******************************************
 /* LAYOUT
 /*******************************************/
+
+/* GENERAL */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* HEADER */
 header {
   display: flex;
   padding-block: 0.2rem;
@@ -85,4 +95,13 @@ nav ul {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+}
+
+/* HOME */
+.bg-img {
+  height: 110vh;
+  background-image: url(./assets/images/home.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

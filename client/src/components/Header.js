@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 // import { Link } from "react-router-dom";
 
 export default function Header() {
@@ -10,8 +10,9 @@ export default function Header() {
         </div>
         <nav>
             <ul>
-                <li><a href="">About</a></li>
-                <li><a href="">Shop</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
             </ul>
         </nav>
     </header>
