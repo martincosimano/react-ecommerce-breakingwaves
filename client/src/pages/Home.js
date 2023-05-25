@@ -1,7 +1,12 @@
 import React from 'react';
+import Main from '../components/Home/Main';
+import Carousel from '../components/Home/Carousel';
 
 export default function Home() {
     return (
-        <main className="bg-img"></main>
+        <div>
+            <Main />
+            <Carousel />
+        </div>
     )
 }

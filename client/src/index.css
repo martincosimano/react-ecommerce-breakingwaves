@@ -14,17 +14,8 @@
     --fs-300: 0.75rem;
 
     --ff-logo: 'Sail', sans-serif;
-    --ff-nav: 'Dosis', sans-serif;
-}
-
-@media (max-width: 40rem) {
-  :root {
-    --fs-xl: 2.8rem; 
-    --fs-600: 2rem;
-    --fs-500: 1.125rem;
-    --fs-400: 1rem;
-    --fs-300: 0.85rem;
-  }
+    --ff-primary: 'Fira Sans Condensed', sans-serif;
+    --ff-secondary: 'Dosis', sans-serif;
 }
 
 /******************************************
@@ -44,22 +35,38 @@ header {
   background-color: var(--clr-background-primary);
   opacity: 0.9;
 }
-.logo-text,
-a {
-  color: var(--clr-font-primary);
-}
 .logo-text {
   font-family: var(--ff-logo);
   font-size: var(--fs-600);
+  color: var(--clr-font-primary);
 }
-a {
-  font-family: var(--ff-nav);
+.nav-anchor {
+  color: var(--clr-font-primary);
+  font-family: var(--ff-secondary);
   text-transform: uppercase;
   font-weight: 600;
 }
 
 /* HOME */
-
+/* SLIDER */
+.card-bottom {
+  padding: 1.25rem;
+  background-color: #d8d1cb;
+  border-radius: 0px 0px 10px 10px;
+}
+.card-top {
+  border-radius: 10px;
+}
+.card-top img  {
+  border-radius: 10px 10px 0px 0px;
+}
+.card-title,
+.card-price {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-500);
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
 
 /******************************************
 /* LAYOUT
@@ -104,4 +111,102 @@ nav ul {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+/* SLIDER SECTION */
+.slider-section {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+.card {
+  overflow: hidden;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 1rem;
+}
+.card-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 0 0.438rem 0 #717171;
+  margin-inline: 1rem;
+  width: 15rem;
+  position: relative;
+}
+.card-bottom {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.card-top img {
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+}
+.slick-list {
+  padding-block: 1rem;
+}
+.card-title {
+  margin: 0;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+.overlay {
+  position: absolute;
+  visibility: hidden;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-500);
+  cursor: grab;
+}
+.buy-btn {
+  width: 10rem;
+  display: flex;
+  height: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  color: var(--clr-background-primary);
+  background-color: var(--clr-background-secondary);
+  letter-spacing: 0.063rem;
+  font-weight: 700;
+  border-radius: 1.25rem;
+  text-transform: uppercase;
+  box-shadow: 0.125rem 0.125rem 1.875rem rgba(0, 0, 0, 0.2);
+}
+.buy-btn:hover {
+  color: #fff;
+  background-color: var(--clr-background-primary);
+  transition: all ease 0.3s;
+  opacity: 0.9;
+}
+.card-top:hover .overlay{
+  visibility: visible;
+  animation: fade 0.5s;
+}
+@keyframes fade {
+  0%{
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.nav-anchor:hover {
+  border-bottom: 0.156rem solid rgb(216, 209, 203);
+  opacity: 0.9;
 }
