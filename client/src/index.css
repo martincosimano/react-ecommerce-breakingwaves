@@ -85,23 +85,25 @@ body {
 /* HEADER */
 header {
   display: flex;
-  padding-block: 0.2rem;
-  padding-inline: 2rem;
+  align-items: center;
+  padding-inline: 1rem;
 }
+
+.mobile-nav-toggle {
+  display: none;
+}
+
 nav {
-  width: 100%;
-}
-nav ul {
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 3rem;
-}
-.logo-container {
   width: 100%;
-  display: flex;
+  justify-content: space-between;
   align-items: center;
+}
+
+.navlist-flex ul {
+  display: flex;
   gap: 1.5rem;
+  align-items: center;
 }
 
 /* HOME */
@@ -112,7 +114,12 @@ nav ul {
   background-size: cover;
   background-repeat: no-repeat;
 }
-
+.logo-text {
+  padding-bottom: 0.15rem;
+}
+ul {
+  padding-left: 1rem;
+}
 /* SLIDER SECTION */
 .slider-section {
   padding-top: 2rem;
@@ -205,7 +212,6 @@ nav ul {
     opacity: 1;
   }
 }
-
 .nav-anchor:hover {
   border-bottom: 0.156rem solid rgb(216, 209, 203);
   opacity: 0.9;
