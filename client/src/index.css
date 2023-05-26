@@ -88,22 +88,26 @@ header {
   align-items: center;
   padding-inline: 1rem;
 }
-
-.mobile-nav-toggle {
-  display: none;
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
-
 nav {
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: center;
 }
-
 .navlist-flex ul {
   display: flex;
   gap: 1.5rem;
   align-items: center;
+}
+.burger-menu {
+  height: 100%;
+  width: 4em;
+  background-color: red;
 }
 
 /* HOME */
