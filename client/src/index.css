@@ -97,6 +97,7 @@ header {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  z-index: 100;
 }
 nav {
   display: flex;
@@ -231,6 +232,10 @@ ul {
 
 @media (max-width: 35rem) {
   /* Navbar CSS */
+  header {
+    position: relative;
+    z-index: 10000;
+  }
   nav {
     align-items: flex-start;
   }
@@ -257,11 +262,12 @@ ul {
     top: 0;
     right: -100%;
     transition: 850ms;
-    z-index: 999;
+    z-index: 9999;
   }
   .nav-menu.active {
     right: 0;
     transition: 450ms;
+    z-index: 10000;
   }
   .nav-menu.active .menu-bars {
     color: var(--clr-font-primary);
