@@ -33,7 +33,7 @@ export default function Carousel() {
             }
           },
           {
-            breakpoint: 520,
+            breakpoint: 560,
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1
