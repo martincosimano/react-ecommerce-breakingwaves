@@ -8,7 +8,7 @@ import { dataDigitalBestSeller } from '../../data'
 export default function Carousel() {
     const [defaultImage, setDefaultImage] = useState({});
     const settings = {
-        dots: false,
+        dots: true,
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 3,

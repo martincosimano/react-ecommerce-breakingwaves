@@ -40,7 +40,8 @@ header {
   font-size: var(--fs-600);
   color: var(--clr-font-primary);
 }
-.nav-anchor {
+.nav-anchor,
+.sidebar-span {
   color: var(--clr-font-primary);
   font-family: var(--ff-secondary);
   text-transform: uppercase;
@@ -66,6 +67,9 @@ header {
   font-size: var(--fs-500);
   letter-spacing: .02em;
   text-transform: uppercase;
+}
+.card-title {
+  border-bottom: 1px solid #b1b1b1;
 }
 
 /******************************************
@@ -151,8 +155,6 @@ ul {
 .card-bottom {
   text-align: center;
   width: 100%;
-  display: flex;
-  justify-content: space-evenly;
 }
 .card-top img {
   width: 100%;
@@ -164,6 +166,12 @@ ul {
 }
 .card-title {
   margin: 0;
+  padding-bottom: 0.5rem;
+}
+.card-price{
+  display: flex;
+  justify-content: center;
+  padding-top: 0.5rem;
 }
 .nav-menu.active {
   overflow: hidden;
