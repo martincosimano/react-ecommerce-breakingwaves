@@ -8,6 +8,7 @@
     --clr-font-secondary: #131114;
 
     --fs-xl: 2rem; 
+    --fs-700: 1.75rem;
     --fs-600: 1.5rem;
     --fs-500: 1rem;
     --fs-400: 0.85rem;
@@ -73,13 +74,37 @@ header {
 .card-title {
   border-bottom: 1px solid #b1b1b1;
 }
+.slider-title {
+  font-family: var(--ff-tertiary);
+  font-weight: 700;
+  text-align: center;
+  font-size: var(--fs-xl);
+  line-height: 50px;
+}
+
+/* HOME ABOUT */
+.home-about-title {
+  font-family: var(--ff-tertiary);
+  font-size: var(--fs-700);
+  line-height: 50px;
+}
+
+/* FOOTER */
+.footer-bg {
+  background-image: url("assets/images/footer-background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  height: 13rem;
+}
+
 
 /******************************************
 /* LAYOUT
 /*******************************************/
 
 /* GENERAL */
-body {
+body, h1,h2,h3,h4,h5,h6 {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
@@ -164,7 +189,6 @@ ul {
   padding-block: 1rem;
 }
 .card-title {
-  margin: 0;
   padding-bottom: 0.5rem;
 }
 .card-price{
@@ -177,12 +201,25 @@ ul {
   overflow: hidden;
 }
 .slider-title {
-  font-family: var(--ff-tertiary);
-  font-weight: 700;
-  text-align: center;
-  font-size: 2.8rem;
-  line-height: 50px;
+  margin-bottom: 2rem;
 }
+
+/* HOME ABOUT */
+.about-section {
+  display: flex;
+  justify-content: space-around;
+  margin-block: 5rem;
+}
+.home-about-img {
+  width: 100%;
+  max-height: 25rem;
+  border-radius: 2px;
+}
+.about-section-split {
+  padding-inline: 1rem;
+}
+
+/* FOOTER */
 
 /******************************************
 /* ADDITIONAL STYLES
@@ -240,10 +277,15 @@ ul {
   border-bottom: 0.156rem solid rgb(216, 209, 203);
   opacity: 1;
 }
-.btn-container {
+.btn-container-carousel {
   display: flex;
   justify-content: center;
   padding-top: 5rem;
+}
+.btn-container-about {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 3rem;
 }
 .btn-black {
   padding: 1rem 2.5rem;
@@ -278,7 +320,7 @@ ul {
 /* MEDIA QUERY
 /*******************************************/
 
-@media (max-width: 35rem) {
+@media (max-width: 40rem) {
   /* Navbar CSS */
   header {
     position: relative;
@@ -367,6 +409,20 @@ ul {
     background-color: #000;
     color: #fff;
   }
+
+  /* HOME ABOUT */
+  .about-section {
+    flex-direction: column;
+  }
+  .home-about-title {
+    text-align: center;
+  }
+  .btn-container-about {
+    justify-content: center;
+    padding-bottom: 3rem;
+  }
+
+  /* ADDITIONAL STYLES */
   .btn-black {
     opacity: 1;
   }
