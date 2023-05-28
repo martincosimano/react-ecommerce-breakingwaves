@@ -46,6 +46,7 @@ header {
   font-family: var(--ff-secondary);
   text-transform: uppercase;
   font-weight: 600;
+  opacity: 0.9;
 }
 
 /* HOME */
@@ -172,6 +173,7 @@ ul {
   display: flex;
   justify-content: center;
   padding-top: 0.5rem;
+  letter-spacing: 0.1rem;
 }
 .nav-menu.active {
   overflow: hidden;
@@ -193,8 +195,6 @@ ul {
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  font-family: var(--ff-primary);
-  font-size: var(--fs-500);
   cursor: grab;
 }
 .buy-btn {
@@ -210,6 +210,8 @@ ul {
   border-radius: 1.25rem;
   text-transform: uppercase;
   box-shadow: 0.125rem 0.125rem 1.875rem rgba(0, 0, 0, 0.2);
+  font-family: var(--ff-secondary);
+  font-size: var(--fs-500);
 }
 .buy-btn:hover {
   color: #fff;
@@ -231,9 +233,28 @@ ul {
 }
 .nav-anchor:hover {
   border-bottom: 0.156rem solid rgb(216, 209, 203);
-  opacity: 0.9;
+  opacity: 1;
 }
-
+.btn-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 5rem;
+}
+.btn-black {
+  padding: 1rem 2.5rem;
+  background-color: var(--clr-background-primary);
+  color: var(--clr-font-primary);
+  border: 3px solid var(--clr-background-primary);
+  border-radius: 5px;
+  font-family: var(--ff-secondary);
+  font-weight: 600;
+  text-transform:uppercase;
+  cursor: pointer;
+  opacity: 0.95;
+}
+.btn-black:hover {
+  opacity: 1;
+}
 /******************************************
 /* MEDIA QUERY
 /*******************************************/
@@ -326,5 +347,8 @@ ul {
     font-size: 3rem;
     background-color: #000;
     color: #fff;
+  }
+  .btn-black {
+    opacity: 1;
   }
 }

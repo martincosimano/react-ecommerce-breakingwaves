@@ -75,6 +75,9 @@ export default function Carousel() {
             </div>
           ))}
           </Slider>
+          <div className="btn-container">
+            <a href=""><button className="btn-black">View all products</button></a>
+            </div>
         </section>
     )
 }
