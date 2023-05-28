@@ -51,6 +51,7 @@ export default function Carousel() {
 
     return (
         <section className="slider-section">
+          <h2 className="slider-title decorated">Trending Now</h2>
           <Slider {...settings}>
               {dataDigitalBestSeller.map((item) => (
             <div className="card">
@@ -77,7 +78,7 @@ export default function Carousel() {
           </Slider>
           <div className="btn-container">
             <a href=""><button className="btn-black">View all products</button></a>
-            </div>
+          </div>
         </section>
     )
 }

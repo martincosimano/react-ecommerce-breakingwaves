@@ -16,6 +16,7 @@
     --ff-logo: 'Sail', sans-serif;
     --ff-primary: 'Fira Sans Condensed', sans-serif;
     --ff-secondary: 'Dosis', sans-serif;
+    --ff-tertiary: 'Montserrat', sans-serif;
 }
 
 /******************************************
@@ -124,16 +125,13 @@ nav {
   background-size: cover;
   background-repeat: no-repeat;
 }
-.logo-text {
-  padding-bottom: 0.15rem;
-}
 ul {
   margin-top: 13px;
   padding-left: 1rem;
 }
 /* SLIDER SECTION */
 .slider-section {
-  padding-top: 2rem;
+  padding-top: 1rem;
   padding-bottom: 3rem;
 }
 .card {
@@ -177,6 +175,13 @@ ul {
 }
 .nav-menu.active {
   overflow: hidden;
+}
+.slider-title {
+  font-family: var(--ff-tertiary);
+  font-weight: 700;
+  text-align: center;
+  font-size: 2.8rem;
+  line-height: 50px;
 }
 
 /******************************************
@@ -245,7 +250,7 @@ ul {
   background-color: var(--clr-background-primary);
   color: var(--clr-font-primary);
   border: 3px solid var(--clr-background-primary);
-  border-radius: 5px;
+  border-radius: 1px;
   font-family: var(--ff-secondary);
   font-weight: 600;
   text-transform:uppercase;
@@ -254,6 +259,20 @@ ul {
 }
 .btn-black:hover {
   opacity: 1;
+}
+.decorated::after {
+  height: 5px;
+  top: 10px;
+  width: 10%;
+  max-width: 100px;
+  left: auto;
+  margin-left: auto;
+  margin-right: auto;
+  content: "";
+  display: block;
+  position: relative;
+  left: 0;
+  background-color: #e2001a;
 }
 /******************************************
 /* MEDIA QUERY
