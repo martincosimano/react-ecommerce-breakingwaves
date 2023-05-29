@@ -1,0 +1,174 @@
+:root {
+    --clr-background-primary: #131114 ;
+    --clr-background-secondary: rgb(216, 209, 203);
+    --clr-background-tertiary: #fff;
+    --clr-background-quaternary: #1b1b1be8;
+
+    --clr-font-primary: #fff;
+    --clr-font-secondary: #131114;
+
+    --fs-xl: 2rem; 
+    --fs-700: 1.75rem;
+    --fs-600: 1.5rem;
+    --fs-500: 1rem;
+    --fs-400: 0.85rem;
+    --fs-300: 0.75rem;
+
+    --ff-logo: 'Sail', sans-serif;
+    --ff-primary: 'Fira Sans Condensed', sans-serif;
+    --ff-secondary: 'Dosis', sans-serif;
+    --ff-tertiary: 'Montserrat', sans-serif;
+}
+/******************************************
+/* BASE STYLES
+/*******************************************/
+header {
+    background-color: var(--clr-background-primary);
+    opacity: 0.9;
+}
+.logo-text {
+    font-family: var(--ff-logo);
+    font-size: var(--fs-600);
+    color: var(--clr-font-primary);
+}
+.nav-anchor,
+.sidebar-span {
+    color: var(--clr-font-primary);
+    font-family: var(--ff-secondary);
+    text-transform: uppercase;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+header {
+    display: flex;
+    align-items: center;
+    padding-inline: 1rem;
+}
+.container-navbar {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 100;
+}
+nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.navlist-flex {
+    height: 100%;
+    display: flex;
+}
+.navlist-flex ul {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+.nav-info--icon {
+    color: var(--clr-font-primary);
+    font-size: 3.25rem;
+}
+
+/******************************************
+/* MEDIA QUERY
+/*******************************************/
+
+@media (max-width: 40rem) {
+    header {
+        position: relative;
+        z-index: 10000;
+    }
+    nav {
+        align-items: flex-start;
+    }
+    .navbar {
+        height: 5rem;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        z-index: 9999;
+    }
+    .menu-bars {
+        margin-left: 2rem;
+        font-size: 1.85rem;
+        background: none;
+        color: var(--clr-font-primary);
+    }
+    .nav-menu {
+        background-color: var(--clr-background-primary);
+        max-width: 15.625rem;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        transition: 850ms;
+        z-index: 9999;
+    }
+    .nav-menu.active {
+        right: 0;
+        transition: 450ms;
+        z-index: 10000;
+    }
+    .nav-menu.active .menu-bars {
+        color: var(--clr-font-primary);
+    }
+    .nav-text {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0.5rem 0 0.5rem 1rem;
+        height: 3.75rem;
+    }
+    .nav-text a {
+        text-decoration: none;
+        color: var(--clr-font-primary);
+        font-size: 1.125rem;
+        width: 95%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 1rem;
+        border-radius: 0.25rem;
+    }
+    .nav-text a:hover {
+        background-color: #000000;
+        color: #fff;
+    }
+    .nav-menu-items {
+        width: 100%;
+    }
+    .navbar-toggle {
+        width: 100%;
+        height: 5rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .sidebar-span {
+        margin-left: 1rem;
+    }
+    .home,
+    .reports,
+    .products {
+        display: flex;
+        height: 90vh;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        background-color: #000;
+        color: #fff;
+    }
+}

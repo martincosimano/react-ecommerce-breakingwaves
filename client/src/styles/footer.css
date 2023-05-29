@@ -1,0 +1,154 @@
+:root {
+    --clr-background-primary: #131114 ;
+    --clr-background-secondary: rgb(216, 209, 203);
+    --clr-background-tertiary: #fff;
+    --clr-background-quaternary: #1b1b1be8;
+
+    --clr-font-primary: #fff;
+    --clr-font-secondary: #131114;
+
+    --fs-xl: 2rem; 
+    --fs-700: 1.75rem;
+    --fs-600: 1.5rem;
+    --fs-500: 1rem;
+    --fs-400: 0.85rem;
+    --fs-300: 0.75rem;
+
+    --ff-logo: 'Sail', sans-serif;
+    --ff-primary: 'Fira Sans Condensed', sans-serif;
+    --ff-secondary: 'Dosis', sans-serif;
+    --ff-tertiary: 'Montserrat', sans-serif;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+.nav-info {
+    background-color: var(--clr-background-primary);
+}
+.nav-info--text {
+    color: var(--clr-font-primary);
+    font-family: var(--ff-tertiary);
+}
+.nav-info--title {
+    font-size: var(--fs-400);
+}
+.nav-info-desc {
+    font-size: var(--fs-300);
+}
+.nav-footer--icons {
+    color: var(--clr-font-primary);
+}
+.footer-form--input,
+.footer-form--btn {
+    font-family: var(--ff-tertiary);
+    color: var(--clr-font-primary);
+}
+.text-copyright,
+.text-copyright a {
+    color: var(--clr-font-primary);
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+.footer-bg {
+    background-image: url("../assets/images/footer-background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 22rem;
+}
+.nav-info {
+    display: flex;
+    justify-content: space-around;
+    max-width: 100%;
+    min-height: 5rem;
+    opacity: 0.8;
+    padding-inline: 0.5rem;
+}
+.nav-info--img img {
+    width: 3.75rem;
+    margin-left: 1.25rem;
+}
+.nav-info--item {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+}
+.nav-footer {
+    padding-top: 2rem;
+}
+.nav-footer ul {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    width: 100%;
+}
+.container-footer-form {
+    display: flex;
+    justify-content: center;
+    padding-top: 6rem;
+}
+.footer-form {
+    position: relative;
+    display: inline-block;
+}
+.footer-form--input {
+    background-color: transparent;
+    width: 30rem;
+    height: 2.5rem;
+    max-width: 100%;
+    padding: 0.625rem;
+    outline: 0;
+    border: 0.125rem solid var(--clr-background-tertiary);
+    transition: border linear .3s;
+    font-weight: 500;
+    overflow: visible;
+}
+.footer-form--btn {
+    overflow: visible;
+    cursor: pointer;
+    display: inline-block;
+    border: 0.125rem solid;
+    padding: 0.438rem 2.188rem;
+    position: absolute;
+    right: 0.313rem;
+    top: 0.313rem;
+    background: rgba(255,255,255,.5);
+    border: 0;
+    padding-left: 0.938rem;
+    padding-right: 0.938rem;
+}
+.container-copyright {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    padding-block: 0.5rem;
+    opacity: 0.5;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+.nav-anchor:hover {
+    border-bottom: 0.156rem solid rgb(216, 209, 203);
+    opacity: 1;
+}
+
+/******************************************
+/* MEDIA QUERY
+/*******************************************/
+
+@media (max-width: 40rem) {
+    .nav-info {
+        align-items: center;
+        flex-direction: column;
+    }
+    .nav-info--item {
+        min-width: 14.875rem;
+    }
+    .footer-form--input {
+        width: 19rem;
+    }
+}

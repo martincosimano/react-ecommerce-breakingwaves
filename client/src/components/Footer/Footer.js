@@ -1,4 +1,5 @@
 import React from 'react'
+import '../../styles/footer.css'
 import * as BsIcons from "react-icons/bs";
 import * as BiIcons from "react-icons/bi";
 
@@ -21,7 +22,7 @@ export default function Footer() {
                             <BsIcons.BsBoxSeam />
                         </div>
                         <div className="nav-info--text">
-                            <h6 className="nav-info--title">FREE RETURNS ON ALL ORDERS</h6>
+                            <h6 className="nav-info--title">FREE RETURNS</h6>
                             <p className="nav-info-desc">When you return in store.</p>
                         </div>
                     </div>
@@ -35,13 +36,24 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
+                <div className="container-footer-form">
+                    <form className="footer-form">
+                        <input className="footer-form--input" type="email" placeholder="Subscribe to our newsletter"></input>
+                        <button className="footer-form--btn">Subscribe</button>
+                    </form>
+                </div>
                 <nav className="nav-footer">
                     <ul>
-                        <li><a>About</a></li>
-                        <li><a>Shop</a></li>
-                        <li><a>Log In/Register</a></li>
+                        <li><a href="" className="nav-footer--icons"><BsIcons.BsFacebook/></a></li>
+                        <li><a href="" className="nav-footer--icons"><BsIcons.BsTwitter/></a></li>
+                        <li><a href="" className="nav-footer--icons"><BsIcons.BsInstagram/></a></li>
+                        <li><a href="" className="nav-footer--icons"><BsIcons.BsYoutube/></a></li>
+                        <li><a href="" className="nav-footer--icons"><BsIcons.BsMap/></a></li>
                     </ul>
                 </nav>
+                <div className="container-copyright">
+                    <p className="text-copyright">© <a href="https://martincosimano.github.io/portfolio/">Martín Cosimano</a>. All rights reserved.</p>
+                </div>
             </div>
         </footer>
     )
