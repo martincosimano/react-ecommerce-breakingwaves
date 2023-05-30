@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Home from './routes/Home';
 import About from './routes/About';
+import PreFooter from './components/Footer/PreFooter';
 import Footer from './components/Footer/Footer';
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
         <Route path="/" element={<Home />}/>
         <Route path="/about" element={<About />}/>
       </Routes>
+      <PreFooter />
       <Footer />
     </BrowserRouter>
   )

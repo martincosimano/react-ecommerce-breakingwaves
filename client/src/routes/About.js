@@ -1,9 +1,10 @@
 import React from 'react'
+import Main from '../components/About/Main'
 
 export default function About() {
     return (
-        <section>
-            <p>Information about.</p>
-        </section>
+        <div>
+            <Main />
+        </div>
     )
 }

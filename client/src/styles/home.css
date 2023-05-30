@@ -36,14 +36,14 @@
   .card-top img  {
     border-radius: 0.625rem 0.625rem 0 0;
   }
-  .card-title,
+  .card-name,
   .card-price {
     font-family: var(--ff-primary);
     font-size: var(--fs-500);
     letter-spacing: .02em;
     text-transform: uppercase;
   }
-  .card-title {
+  .card-name {
     border-bottom: 0.063rem solid #b1b1b1;
   }
   .slider-title {
@@ -66,81 +66,76 @@
 /*******************************************/
 
 .bg-img {
-    height: 110vh;
-    background-image: url(../assets/images/home.jpg);
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  ul {
-    margin-top: 0.813rem;
-    padding-left: 1rem;
-  }
-  /* SLIDER */
-  .slider-section {
-    padding-top: 1rem;
-    padding-bottom: 3rem;
-  }
-  .card {
-    overflow: hidden;
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-    padding-block: 1rem;
-  }
-  .card-top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    box-shadow: 0 0 0.438rem 0 #717171;
-    margin-inline: 1rem;
-    width: 15rem;
-    position: relative;
-  }
-  .card-bottom {
-    text-align: center;
-    width: 100%;
-  }
-  .card-top img {
-    width: 100%;
-    position: relative;
-    cursor: pointer;
-  }
-  .slick-list {
-    padding-block: 1rem;
-  }
-  .card-title {
-    padding-bottom: 0.5rem;
-  }
-  .card-price{
-    display: flex;
-    justify-content: center;
-    padding-top: 0.5rem;
-    letter-spacing: 0.1rem;
-  }
-  .nav-menu.active {
-    overflow: hidden;
-  }
-  .slider-title {
-    margin-bottom: 2rem;
-  }
+  height: 45rem;
+  background-image: url(../assets/images/home.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+ul {
+  margin-top: 0.813rem;
+  padding-left: 1rem;
+}
+/* SLIDER */
+.slider-section {
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+}
+.card {
+  overflow: hidden;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 1rem;
+}
+.card-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 0 0.438rem 0 #717171;
+  margin-inline: 1rem;
+  width: 15rem;
+  position: relative;
+}
+.card-bottom {
+  text-align: center;
+  width: 100%;
+}
+.card-top img {
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+}
+.slick-list {
+  padding-block: 1rem;
+}
+.card-name {
+  padding-bottom: 0.5rem;
+}
+.card-price{
+  display: flex;
+  justify-content: center;
+  padding-top: 0.5rem;
+  letter-spacing: 0.1rem;
+}
+.nav-menu.active {
+  overflow: hidden;
+}
+.slider-title {
+  margin-bottom: 2rem;
+}
   
-  /* ABOUT */
-  .about-section {
-    display: flex;
-    justify-content: space-around;
-    margin-block: 6rem;
-  }
-  .home-about-img {
-    width: 100%;
-    max-height: 25rem;
-    border-radius: 0.125rem;
-    box-shadow: 0.125rem 0.125rem 1.875rem rgba(0, 0, 0, 0.2);
-  }
-  .about-section-split {
-    padding-inline: 1rem;
-  }
+/* ABOUT */
+.about-section {
+  margin-block: 6rem;
+}
+.home-about-img {
+  width: 100%;
+  max-height: 25rem;
+  border-radius: 0.125rem;
+  box-shadow: 0.125rem 0.125rem 1.875rem rgba(0, 0, 0, 0.2);
+}
 
 /******************************************
 /* ADDITIONAL STYLES
@@ -211,10 +206,6 @@
 /*******************************************/
 
 @media (max-width: 40rem) {
-    /* ABOUT */
-  .about-section {
-    flex-direction: column;
-  }
   .home-about-title {
     text-align: center;
   }

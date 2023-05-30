@@ -24,15 +24,17 @@ export default function Navbar() {
     }, []);
   
     return (
-      <div className="container-navbar">
         <IconContext.Provider value={{ color: "undefined" }}>
           {windowWidth > 560 ? (
             // Display full navigation for wider screens
             <div className="nav-container">
+              <div className="logo-container">
+                <a href=""><img src={require("../../assets/images/logo.png")} alt=""/></a>
+              </div>
               <nav>
                 <div className="navlist-flex">
                   <ul>
-                    <li>
+                    <li className="logo-hold">
                       <a href="">
                         <span className="logo-text">Breaking Waves</span>
                       </a>
@@ -70,6 +72,9 @@ export default function Navbar() {
           ) : (
             // Display hamburger menu for screens below 560px
             <div className="navbar">
+              <div className="logo-container">
+                <a href=""><img src={require("../../assets/images/logo.png")} alt=""/></a>
+              </div>
               <Link to="#" className="menu-bars">
                 <FaIcons.FaBars onClick={showSidebar} />
               </Link>
@@ -95,6 +100,5 @@ export default function Navbar() {
             </div>
           )}
         </IconContext.Provider>
-      </div>
     );
   }

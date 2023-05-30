@@ -6,10 +6,9 @@ import '../../styles/header.css';
 export default function Header() {
     return (
         <header>
-        <div className="logo-container">
-            <a href=""><img src={require("../../assets/images/logo.png")} alt=""/></a>
+        <div className="container">
+            <Navbar />
         </div>
-        <Navbar />
     </header>
     )
 }

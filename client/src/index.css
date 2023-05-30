@@ -40,7 +40,21 @@ body, h1,h2,h3,h4,h5,h6, p,a {
 * {
   box-sizing: border-box;
 }
+.container {
+  margin-inline: auto;
+  width: min(90%, 70.5rem);
+}
+.split {
+  display: flex;
+  flex-direction: row;
+}
+.split > * {
+  flex-basis: 100%;
+}
 
+.split > * + * {
+  margin-left: 2rem;
+}
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
@@ -78,7 +92,12 @@ body, h1,h2,h3,h4,h5,h6, p,a {
 /*******************************************/
 
 @media (max-width: 40rem) {
-  /* ADDITIONAL STYLES */
+  .split {
+    flex-direction: column;
+  }
+  .split > * + * {
+    margin-left: 0;
+  }
   .btn-black {
     opacity: 1;
   }

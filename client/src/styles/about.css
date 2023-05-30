@@ -1,0 +1,79 @@
+:root {
+    --clr-background-primary: #131114 ;
+    --clr-background-secondary: rgb(216, 209, 203);
+    --clr-background-tertiary: #fff;
+    --clr-background-quaternary: #1b1b1be8;
+
+    --clr-font-primary: #fff;
+    --clr-font-secondary: #131114;
+
+    --fs-xl: 2rem; 
+    --fs-700: 1.75rem;
+    --fs-600: 1.5rem;
+    --fs-500: 1rem;
+    --fs-400: 0.85rem;
+    --fs-300: 0.75rem;
+
+    --ff-logo: 'Sail', sans-serif;
+    --ff-primary: 'Fira Sans Condensed', sans-serif;
+    --ff-secondary: 'Dosis', sans-serif;
+    --ff-tertiary: 'Montserrat', sans-serif;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+.main-title {
+    font-size: var(--fs-xl);
+    font-family: var(--ff-tertiary);
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+.container-main-title {
+    margin-top: 7rem;
+}
+.main-title {
+    padding-inline: 0.5rem;
+    text-align: center;
+}
+.container-history {
+    display: flex;
+    justify-content: space-around;
+    margin-block: 6rem;
+}
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+.main-dot-start {
+    width: 10px;
+    height: 10px;
+    background-color: #2b2b2b;
+    border-radius: 50%;
+    position: absolute;
+    top: 25rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 9;
+}
+.main-line {
+    width: 2px;
+    height: 12rem;
+    background-color: #666666;
+    position: relative;
+    top: 8.71rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 9;
+}
+/******************************************
+/* MEDIA QUERY
+/*******************************************/

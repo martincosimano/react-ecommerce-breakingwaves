@@ -51,33 +51,35 @@ export default function Carousel() {
 
     return (
         <section className="slider-section">
-          <h2 className="slider-title decorated">Trending Now</h2>
-          <Slider {...settings}>
-              {dataDigitalBestSeller.map((item) => (
-            <div className="card">
-              <div className="card-top">
-              <img
-                  src={
-                    defaultImage[item.title] === item.title
-                      ? defaultImage.linkDefault
-                      : item.linkImg
-                  }
-                  alt={item.title}
-                onError={handleErrorImage}
-                />
-                <div className="overlay">
-                  <a href="" class="buy-btn">Buy Now</a>
-                </div>
-                <div className="card-bottom">
-                  <h5 className="card-title">{item.title}</h5>
-                  <span className="card-price">{item.price}</span>
+          <div className="container">
+            <h2 className="slider-title decorated">Trending Now</h2>
+            <Slider {...settings}>
+                {dataDigitalBestSeller.map((item) => (
+              <div className="card">
+                <div className="card-top">
+                <img
+                    src={
+                      defaultImage[item.productName] === item.productName
+                        ? defaultImage.linkDefault
+                        : item.productImage
+                    }
+                    alt={item.productName}
+                  onError={handleErrorImage}
+                  />
+                  <div className="overlay">
+                    <a href="" class="buy-btn">Buy Now</a>
+                  </div>
+                  <div className="card-bottom">
+                    <h5 className="card-name">{item.productName}</h5>
+                    <span className="card-price">{item.productPrice}</span>
+                  </div>
                 </div>
               </div>
+            ))}
+            </Slider>
+            <div className="btn-container-carousel">
+              <a href=""><button className="btn-black">View all products</button></a>
             </div>
-          ))}
-          </Slider>
-          <div className="btn-container-carousel">
-            <a href=""><button className="btn-black">View all products</button></a>
           </div>
         </section>
     )
