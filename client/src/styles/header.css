@@ -33,6 +33,7 @@ header {
 }
 .nav-anchor,
 .sidebar-span {
+    font-size: var(--fs-500);
     color: var(--clr-font-primary);
     font-family: var(--ff-secondary);
     text-transform: uppercase;
@@ -86,6 +87,10 @@ nav {
 }
 .logo-hold {
     padding-bottom: 0.15rem;
+}
+.nav-cart {
+    position: relative;
+    top: 2px;
 }
 
 /******************************************

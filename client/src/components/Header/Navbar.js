@@ -25,7 +25,7 @@ export default function Navbar() {
   
     return (
         <IconContext.Provider value={{ color: "undefined" }}>
-          {windowWidth > 560 ? (
+          {windowWidth > 640 ? (
             // Display full navigation for wider screens
             <div className="nav-container">
               <div className="logo-container">
@@ -34,36 +34,22 @@ export default function Navbar() {
               <nav>
                 <div className="navlist-flex">
                   <ul>
-                    <li className="logo-hold">
-                      <a href="">
-                        <span className="logo-text">Breaking Waves</span>
-                      </a>
+                    <li className="logo-hold"><a href=""><span className="logo-text">Breaking Waves</span></a>
+                    </li>
+                    <li><a href="" className="nav-anchor">About</a>
                     </li>
                     <li>
-                      <a href="" className="nav-anchor">
-                        <span>About</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="" className="nav-anchor">
-                        <span>Shop</span>
-                      </a>
+                      <a href="" className="nav-anchor">Shop</a>
                     </li>
                   </ul>
                 </div>
                 <div className="navlist-flex">
                   <ul>
                     <li>
-                      <a href="" className="nav-anchor">
-                        <span>
-                          <i className="fa-solid fa-cart-shopping nav-icon"></i>
-                        </span>
-                      </a>
+                      <a href="" className="nav-anchor">Log In/Register</a>
                     </li>
                     <li>
-                      <a href="" className="nav-anchor">
-                        <span>Log In/Register</span>
-                      </a>
+                      <a href="" className="nav-anchor nav-cart"><FaIcons.FaShoppingCart/></a>
                     </li>
                   </ul>
                 </div>

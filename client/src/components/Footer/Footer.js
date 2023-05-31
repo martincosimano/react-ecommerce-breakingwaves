@@ -17,7 +17,7 @@ export default function Footer() {
                         <li><a href="" className="nav-footer--icons"><BsIcons.BsFacebook/></a></li>
                         <li><a href="" className="nav-footer--icons"><BsIcons.BsTwitter/></a></li>
                         <li><a href="" className="nav-footer--icons"><BsIcons.BsInstagram/></a></li>
-                        <li><a href="" className="nav-footer--icons"><BsIcons.BsYoutube/></a></li>
+                        <li><a href="" className="nav-footer--icons"><BsIcons.BsEnvelope/></a></li>
                         <li><a href="" className="nav-footer--icons"><BsIcons.BsMap/></a></li>
                     </ul>
                 </nav>

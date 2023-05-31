@@ -131,8 +131,9 @@ ul {
   margin-block: 6rem;
 }
 .home-about-img {
-  width: 100%;
+  max-width: 100%;
   max-height: 25rem;
+  min-height: 15rem;
   border-radius: 0.125rem;
   box-shadow: 0.125rem 0.125rem 1.875rem rgba(0, 0, 0, 0.2);
 }
