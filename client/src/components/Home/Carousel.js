@@ -67,11 +67,14 @@ export default function Carousel() {
                   onError={handleErrorImage}
                   />
                   <div className="overlay">
-                    <a href="" class="buy-btn">Buy Now</a>
+                    <a href="" class="buy-btn">Add to cart</a>
                   </div>
                   <div className="card-bottom">
                     <h5 className="card-name">{item.productName}</h5>
-                    <span className="card-price">{item.productPrice}</span>
+                    <div className="card-cart--info">
+                      <button className="card-cart btn-black">Add to cart</button>
+                      <span className="card-price">{item.productPrice}</span>
+                    </div>
                   </div>
                 </div>
               </div>

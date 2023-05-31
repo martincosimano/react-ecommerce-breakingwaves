@@ -108,7 +108,7 @@
 /******************************************
 /* MEDIA QUERY
 /*******************************************/
-@media (max-width: 73.063rem) {
+@media (max-width: 73rem) {
     .vertical-timeline-element-icon {
         margin-left: 15px !important;
     }

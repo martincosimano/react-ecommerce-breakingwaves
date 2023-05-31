@@ -201,10 +201,30 @@ ul {
     justify-content: flex-start;
     padding-top: 3rem;
 }
+.card-cart {
+  display: none;
+}
 
 /******************************************
 /* MEDIA QUERY
 /*******************************************/
+@media (max-width: 73rem) {
+  .overlay {
+    display: none;
+  }
+  .card-cart--info {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .card-cart {
+    display: block;
+    margin-top: 0.5rem;
+  }
+  .card-cart.btn-black {
+    padding: 0.5rem 1rem;
+  }
+}
 
 @media (max-width: 40rem) {
   .home-about-title {
