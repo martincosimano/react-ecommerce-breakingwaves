@@ -31,9 +31,9 @@ export default function Navbar() {
               <div className="logo-container">
                 <a href=""><img src={require("../../assets/images/logo.png")} alt=""/></a>
               </div>
-              <nav>
+              <nav className="nav-header">
                 <div className="navlist-flex">
-                  <ul>
+                  <ul className="nav-ul">
                     <li className="logo-hold"><a href=""><span className="logo-text">Breaking Waves</span></a>
                     </li>
                     <li><a href="" className="nav-anchor">About</a>
@@ -44,7 +44,7 @@ export default function Navbar() {
                   </ul>
                 </div>
                 <div className="navlist-flex">
-                  <ul>
+                  <ul className="nav-ul">
                     <li>
                       <a href="" className="nav-anchor">Log In/Register</a>
                     </li>
@@ -64,8 +64,8 @@ export default function Navbar() {
               <Link to="#" className="menu-bars">
                 <FaIcons.FaBars onClick={showSidebar} />
               </Link>
-              <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
-                <ul className="nav-menu-items" onClick={showSidebar}>
+              <nav className={sidebar ? "nav-menu active nav-header" : "nav-menu"}>
+                <ul className="nav-menu-items nav-ul" onClick={showSidebar}>
                   <li className="navbar-toggle">
                     <Link to="#" className="menu-bars">
                       <AiIcons.AiOutlineClose />

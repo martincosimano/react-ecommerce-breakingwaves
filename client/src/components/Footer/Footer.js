@@ -13,7 +13,7 @@ export default function Footer() {
                     </form>
                 </div>
                 <nav className="nav-footer">
-                    <ul>
+                    <ul className="nav-ul">
                         <li><a href="" className="nav-footer--icons"><BsIcons.BsFacebook/></a></li>
                         <li><a href="" className="nav-footer--icons"><BsIcons.BsTwitter/></a></li>
                         <li><a href="" className="nav-footer--icons"><BsIcons.BsInstagram/></a></li>

@@ -33,7 +33,7 @@ a {
 /******************************************
 /* LAYOUT
 /*******************************************/
-body, h1,h2,h3,h4,h5,h6, p,a {
+body, h1,h2,h3,h4,h5,h6, p, a, ul {
   margin: 0;
   padding: 0;
 }
@@ -51,9 +51,12 @@ body, h1,h2,h3,h4,h5,h6, p,a {
 .split > * {
   flex-basis: 100%;
 }
-
 .split > * + * {
   margin-left: 2rem;
+}
+.nav-ul {
+  margin-top: 0.813rem;
+  padding-left: 1rem;
 }
 /******************************************
 /* ADDITIONAL STYLES

@@ -1,0 +1,114 @@
+:root {
+    --clr-background-primary: #131114 ;
+    --clr-background-secondary: rgb(216, 209, 203);
+    --clr-background-tertiary: #fff;
+    --clr-background-quaternary: #1b1b1be8;
+
+    --clr-font-primary: #fff;
+    --clr-font-secondary: #131114;
+
+    --fs-xl: 2rem; 
+    --fs-700: 1.75rem;
+    --fs-600: 1.5rem;
+    --fs-500: 1rem;
+    --fs-400: 0.85rem;
+    --fs-300: 0.75rem;
+
+    --ff-logo: 'Sail', sans-serif;
+    --ff-primary: 'Fira Sans Condensed', sans-serif;
+    --ff-secondary: 'Dosis', sans-serif;
+    --ff-tertiary: 'Montserrat', sans-serif;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+
+
+/******************************************
+/* MEDIA QUERY
+/*******************************************/
+@media (max-width: 73rem) {}
+@media (max-width: 40rem) {}
+
+/* .category-page-row {
+    padding-top: 30px;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.col {
+    position: relative;
+    margin: 0;
+    padding: 0 15px 30px;
+    width: 100%;
+}
+
+.large-3 {
+    max-width: 25%;
+    flex-basis: 25%;
+}
+.large-9 {
+    max-width: 75%;
+    flex-basis: 75%;
+} */
+
+.shop-card--container {
+    flex-wrap: wrap;
+}
+
+.products--container {
+    width: 100%;
+}
+.shop-card {
+    width: 33%;
+}
+.shop-container,
+.shop-card--container {
+    display: flex;
+}
+.sidebar-container {
+    width: 25%;
+}
+.shop {
+    width: 75%;
+}
+.products-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nav-pagination ul {
+    display: flex;
+}
+
+.sidebar-title.decorated::after {
+    margin-inline: 0;
+    width: 2rem;
+    height: 0.25rem;
+}
+.sidebar-categories {
+    margin-top: 1rem;
+}
+.shop-main {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+.category-item {
+    border-bottom: 1px solid #ececec;
+}

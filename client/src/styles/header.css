@@ -64,7 +64,7 @@ header {
 .logo-container {
     margin-block: auto;
 }
-nav {
+.nav-header {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -102,7 +102,7 @@ nav {
         position: relative;
         z-index: 10000;
     }
-    nav {
+    .nav-header {
         align-items: flex-start;
     }
     .navbar {
