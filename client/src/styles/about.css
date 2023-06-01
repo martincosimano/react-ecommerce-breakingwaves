@@ -1,8 +1,6 @@
 :root {
     --clr-background-primary: #131114 ;
-    --clr-background-secondary: rgb(216, 209, 203);
-    --clr-background-tertiary: #fff;
-    --clr-background-quaternary: #1b1b1be8;
+    --clr-background-secondary: #fff;
 
     --clr-font-primary: #fff;
     --clr-font-secondary: #131114;
@@ -15,9 +13,9 @@
     --fs-300: 0.75rem;
 
     --ff-logo: 'Sail', sans-serif;
-    --ff-primary: 'Fira Sans Condensed', sans-serif;
+    --ff-primary: 'Montserrat', sans-serif;
     --ff-secondary: 'Dosis', sans-serif;
-    --ff-tertiary: 'Montserrat', sans-serif;
+    --ff-tertiary: 'Fira Sans Condensed', sans-serif;
 }
 
 /******************************************
@@ -25,18 +23,18 @@
 /*******************************************/
 .main-title {
     font-size: var(--fs-xl);
-    font-family: var(--ff-tertiary);
+    font-family: var(--ff-primary);
     text-transform: uppercase;
     text-align: center;
     line-height: 1.5;
 }
 .history-title {
-    font-family: var(--ff-tertiary);
+    font-family: var(--ff-primary);
     font-size: var(--fs-700) !important;
     line-height: 3.125rem;
 }
 .history-text {
-    font-family: var(--ff-tertiary);
+    font-family: var(--ff-primary);
     font-size: var(--fs-500) !important;
     line-height: 1.1;
 }
@@ -47,8 +45,7 @@
     margin-top: 8rem;
 }
 .container-main-title {
-    margin-top: 5rem;
-    margin-bottom: 3rem;
+    margin-top: 3rem;
 }
 .main-title {
     padding-inline: 0.5rem;
@@ -78,6 +75,9 @@
 .text-end {
     text-align: end;
 }
+.vertical-timeline-element-content {
+    align-items: initial !important;
+}
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
@@ -95,7 +95,7 @@
 }
 .vertical-timeline-element-icon {
     z-index: 1;
-    background: var(--clr-background-tertiary);
+    background: var(--clr-background-secondary);
     box-shadow: 0 0 0 4px #000,inset 0 2px 0 rgba(0,0,0,.08),0 3px 0 4px rgba(0,0,0,.05) !important;
     width: 10px !important;
     height: 10px !important;
@@ -109,6 +109,9 @@
 /* MEDIA QUERY
 /*******************************************/
 @media (max-width: 73rem) {
+    .container-main-title {
+        margin-bottom: 3rem;
+    }
     .vertical-timeline-element-icon {
         margin-left: 15px !important;
     }
@@ -117,6 +120,9 @@
     }
     .history-text {
         width: 80%;
+    }
+    .vertical-timeline-element-content {
+        align-items: center !important;
     }
 }
 @media (max-width: 40rem) {

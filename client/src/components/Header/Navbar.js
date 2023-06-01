@@ -29,17 +29,27 @@ export default function Navbar() {
             // Display full navigation for wider screens
             <div className="nav-container">
               <div className="logo-container">
-                <a href=""><img src={require("../../assets/images/logo.png")} alt=""/></a>
+              <Link to="/">
+                <img src={require("../../assets/images/logo.png")} alt=""/>
+              </ Link>
               </div>
               <nav className="nav-header">
                 <div className="navlist-flex">
                   <ul className="nav-ul">
-                    <li className="logo-hold"><a href=""><span className="logo-text">Breaking Waves</span></a>
-                    </li>
-                    <li><a href="" className="nav-anchor">About</a>
+                    <li className="logo-hold">
+                    <Link to="/">
+                      <span className="logo-text">Breaking Waves</span>
+                    </Link>
                     </li>
                     <li>
-                      <a href="" className="nav-anchor">Shop</a>
+                    <Link to="/about">
+                      <span className="nav-anchor">About</span>
+                    </Link>
+                    </li>
+                    <li>
+                    <Link to="/shop">
+                      <span className="nav-anchor">Shop</span>
+                    </Link>
                     </li>
                   </ul>
                 </div>

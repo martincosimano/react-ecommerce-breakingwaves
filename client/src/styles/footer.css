@@ -1,8 +1,6 @@
 :root {
     --clr-background-primary: #131114 ;
-    --clr-background-secondary: rgb(216, 209, 203);
-    --clr-background-tertiary: #fff;
-    --clr-background-quaternary: #1b1b1be8;
+    --clr-background-secondary: #fff;
 
     --clr-font-primary: #fff;
     --clr-font-secondary: #131114;
@@ -15,9 +13,9 @@
     --fs-300: 0.75rem;
 
     --ff-logo: 'Sail', sans-serif;
-    --ff-primary: 'Fira Sans Condensed', sans-serif;
+    --ff-primary: 'Montserrat', sans-serif;
     --ff-secondary: 'Dosis', sans-serif;
-    --ff-tertiary: 'Montserrat', sans-serif;
+    --ff-tertiary: 'Fira Sans Condensed', sans-serif;
 }
 
 /******************************************
@@ -28,7 +26,7 @@
 }
 .nav-info--text {
     color: var(--clr-font-primary);
-    font-family: var(--ff-tertiary);
+    font-family: var(--ff-primary);
 }
 .nav-info--title {
     font-size: var(--fs-400);
@@ -41,7 +39,7 @@
 }
 .footer-form--input,
 .footer-form--btn {
-    font-family: var(--ff-tertiary);
+    font-family: var(--ff-primary);
     color: var(--clr-font-primary);
 }
 .text-copyright,
@@ -103,7 +101,7 @@
     max-width: 100%;
     padding: 0.625rem;
     outline: 0;
-    border: 0.125rem solid var(--clr-background-tertiary);
+    border: 0.125rem solid var(--clr-background-secondary);
     transition: border linear .3s;
     font-weight: 500;
     overflow: visible;

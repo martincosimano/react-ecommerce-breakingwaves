@@ -1,8 +1,6 @@
 :root {
     --clr-background-primary: #131114 ;
-    --clr-background-secondary: rgb(216, 209, 203);
-    --clr-background-tertiary: #fff;
-    --clr-background-quaternary: #1b1b1be8;
+    --clr-background-secondary: #fff;
 
     --clr-font-primary: #fff;
     --clr-font-secondary: #131114;
@@ -15,9 +13,9 @@
     --fs-300: 0.75rem;
 
     --ff-logo: 'Sail', sans-serif;
-    --ff-primary: 'Fira Sans Condensed', sans-serif;
+    --ff-primary: 'Montserrat', sans-serif;
     --ff-secondary: 'Dosis', sans-serif;
-    --ff-tertiary: 'Montserrat', sans-serif;
+    --ff-tertiary: 'Fira Sans Condensed', sans-serif;
 }
 /******************************************
 /* BASE STYLES
