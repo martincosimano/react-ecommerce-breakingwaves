@@ -47,6 +47,7 @@ header {
     display: flex;
     align-items: center;
     padding-inline: 1rem;
+    z-index: 100000;
 }
 .container-navbar {
     display: flex;
@@ -98,7 +99,6 @@ header {
 @media (max-width: 40rem) {
     header {
         position: relative;
-        z-index: 10000;
     }
     .nav-header {
         align-items: flex-start;

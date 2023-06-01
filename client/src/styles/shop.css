@@ -21,14 +21,14 @@
 /******************************************
 /* BASE STYLES
 /*******************************************/
-.sidebar-title {
+.sidebar-title.shop {
     color: var(--clr-font-secondary);
     font-family: var(--ff-primary);
     font-size: var(--fs-500);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-.category-item a {
+.category-item.shop {
     color: var(--clr-font-secondary);
     font-family: var(--ff-primary);
     font-size: var(--fs-500);
@@ -54,7 +54,7 @@
 .sidebar-container {
     width: 25%;
 }
-.shop {
+.shop-products {
     width: 75%;
 }
 .products-container {
@@ -80,24 +80,24 @@
     width: 100%;
     margin-top: 1.5rem;
 }
-.toggle-sidebar {
+.sidebar-toggle--shop {
     display: none;
 }
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
-.sidebar-title.decorated::after {
+.sidebar-title.shop.decorated::after {
     margin-inline: 0;
     width: 2rem;
     height: 0.25rem;
 }
-.category-item {
+.category-item.shop {
     border-bottom: 1px solid #ececec;
 }
-.category-item a {
+.category-item.shop {
     opacity: 0.9;
 }
-.category-item a:hover {
+.category-item.shop:hover {
     opacity: 1;
 }
 .select-sort {
@@ -122,21 +122,36 @@
     color: var(--clr-font-secondary);
     border: 2px solid var(--clr-background-primary);
 }
-.toggle-sidebar span,
-.toggle-sidebar svg {
+.sidebar-toggle--shop span,
+.sidebar-toggle--shop svg {
     cursor: pointer;
 }
 /******************************************
 /* MEDIA QUERY
 /*******************************************/
 @media (max-width: 73rem) {
-    .sidebar-container {
-        display: none;
+    .sidebar-container,
+    .sidebar-container.active {
+        display: flex;
+        position: fixed;
+        background-color: var(--clr-background-secondary);
+        width: 45%;
+        height: 100vh;
+        z-index: 10000;
+        opacity: 0.9;
+        left: -100%;
+        top: 0;
+        padding-top: 8rem;
+        padding-left: 1.5rem;
+        transition: 450ms;
     }
-    .shop {
+    .sidebar-container.active {
+        left: 0;
+    }
+    .shop-products {
         width: 100%;
     }
-    .toggle-sidebar {
+    .sidebar-toggle--shop {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -148,16 +163,7 @@
         gap: 1rem;
         font-weight: 600;
     }
-    .sidebar-container.active {
-        display: block;
-        position: absolute;
-        background-color: var(--clr-background-secondary);
-        width: 40%;
-        z-index: 10000;
-        opacity: 0.9;
-        border-radius: 2px;
-    }
-    .category-item a {
+    .category-item.shop {
         opacity: 1;
     }
 }

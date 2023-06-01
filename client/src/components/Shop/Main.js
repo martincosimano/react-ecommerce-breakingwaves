@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import '../../styles/shop.css'
+import Sidebar from '../../components/Shop/Sidebar';
 import * as ImIcons from "react-icons/im";
 
 export default function Main() {
@@ -11,23 +12,15 @@ export default function Main() {
             <div className="container">
                 <div className="shop-container">
                     {/* SIDEBAR COMPONENT */}
-                    <div className= {sidebar ? "sidebar-container active" : "sidebar-container"}>
-                        <aside className="aside-container">
-                            <h3 className="sidebar-title decorated">Categories</h3>
-                            <ul className="sidebar-categories">
-                                <li className="category-item"><a href="">T-Shirts</a></li>
-                                <li className="category-item"><a href="">Hoodies & Jackets</a></li>
-                                <li className="category-item"><a href="">Pants & Sweatpants</a></li>
-                                <li className="category-item"><a href="">Accesories</a></li>
-                                <li className="category-item"><a href="">Skateboarding</a></li>
-                            </ul>
-                        </aside>
-                    </div>
+                    <Sidebar 
+                        sidebar={sidebar}
+                        showSidebar={showSidebar}
+                    />
                     {/* SIDEBAR COMPONENT */}
 
-                    <div className="shop">
+                    <div className="shop-products">
                         <div className="products-container">
-                            <div className="toggle-sidebar">
+                            <div className="sidebar-toggle--shop">
                                 <ImIcons.ImEqualizer onClick={showSidebar} />
                                 <span onClick={showSidebar}>Filter</span>
                             </div>
