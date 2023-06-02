@@ -1,4 +1,4 @@
-export const SidebarData = [
+export const shopSidebarData = [
     {
         id: 1,
         title: "T-Shirts",

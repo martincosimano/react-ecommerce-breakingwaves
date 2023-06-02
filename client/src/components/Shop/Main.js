@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import '../../styles/shop.css'
 import Sidebar from '../../components/Shop/Sidebar';
-import { SidebarData } from './Sidebardata';
+import { shopSidebarData } from "../../data/shopSidebardata";
 import * as ImIcons from "react-icons/im";
 
 export default function Main() {
@@ -17,7 +16,7 @@ export default function Main() {
                         sidebar={sidebar}
                         showSidebar={showSidebar}
                         title={'Category'}
-                        categories={SidebarData}
+                        categories={shopSidebarData}
                         isNav={false}
                     />
                     {/* SIDEBAR COMPONENT */}

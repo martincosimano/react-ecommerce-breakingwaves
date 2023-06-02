@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
-import { dataDigitalBestSeller } from '../../data'
+import { productsData } from '../../data/productsData';
 
 export default function Carousel() {
     const [defaultImage, setDefaultImage] = useState({});
@@ -54,7 +55,7 @@ export default function Carousel() {
           <div className="container">
             <h2 className="slider-title decorated">Trending Now</h2>
             <Slider {...settings}>
-                {dataDigitalBestSeller.map((item) => (
+                {productsData.map((item) => (
               <div key={item.productName} className="card">
                 <div className="card-top">
                 <img
@@ -81,7 +82,7 @@ export default function Carousel() {
             ))}
             </Slider>
             <div className="btn-container-carousel">
-              <a href=""><button className="btn-black">View all products</button></a>
+              <Link to="/shop"><button className="btn-black">View all products</button></Link>
             </div>
           </div>
         </section>

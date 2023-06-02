@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 export default function AboutSection() {
     return (
@@ -8,7 +9,7 @@ export default function AboutSection() {
                     <div>
                         <h3 className="home-about-title">Clothing designed<br/> for adventure.</h3>
                         <div className="btn-container-about">
-                            <a href=""><button className="btn-black">Read about us</button></a>
+                            <Link to="/about"><button className="btn-black">Read about us</button></Link>
                         </div>
                     </div>
                     <div>

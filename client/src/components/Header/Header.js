@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
-import '../../styles/header.css';
-// import { Link } from "react-router-dom";
+import '../../styles/components/header.css';
 
 export default function Header() {
     return (

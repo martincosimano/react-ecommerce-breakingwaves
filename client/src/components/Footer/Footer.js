@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../styles/footer.css'
+import '../../styles/components/footer.css'
 import * as BsIcons from "react-icons/bs";
 
 export default function Footer() {

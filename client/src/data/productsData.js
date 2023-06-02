@@ -1,4 +1,4 @@
-export const dataDigitalBestSeller = [
+export const productsData = [
     {
       productName: 'Heavy crafted shirt',
       productPrice: '$25.99',
