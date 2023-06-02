@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import * as FaIcons from "react-icons/fa";
-import Sidebar from "../Shop/Sidebar";
+import Sidebar from "../shared/Sidebar";
 import { navSidebarData } from "../../data/navSidebardata";
 import { Link } from "react-router-dom";
 import { IconContext } from "react-icons";

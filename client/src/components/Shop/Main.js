@@ -1,17 +1,38 @@
-import React, { useState } from "react";
-import Sidebar from '../../components/Shop/Sidebar';
+import React, { useState, useMemo } from "react";
+import Sidebar from "../shared/Sidebar";
+import Card from "../shared/Card";
 import { shopSidebarData } from "../../data/shopSidebardata";
+import { productsData } from '../../data/productsData';
 import * as ImIcons from "react-icons/im";
 
+function sortItems(items, sortType) {
+    if (sortType === "lowToHigh") {
+      return [...items].sort((a, b) => parseFloat(a.productPrice.slice(1)) - parseFloat(b.productPrice.slice(1)));
+    } else if (sortType === "highToLow") {
+      return [...items].sort((a, b) => parseFloat(b.productPrice.slice(1)) - parseFloat(a.productPrice.slice(1)));
+    } else {
+      return items;
+    }
+  }
+
 export default function Main() {
+
     const [sidebar, setSidebar] = useState(false);
     const showSidebar = () => setSidebar(!sidebar);
+
+    const [productItems] = useState(productsData);
+
+    const [sortType, setSortType] = useState("");
+    const sortedItems = useMemo(() => sortItems(productsData, sortType), [productsData, sortType]);
+
+    const handleSortChange = (e) => {
+        setSortType(e.target.value);
+    };
 
     return (
         <main className="shop-main">
             <div className="container">
                 <div className="shop-container">
-                    {/* SIDEBAR COMPONENT */}
                     <Sidebar 
                         sidebar={sidebar}
                         showSidebar={showSidebar}
@@ -19,8 +40,6 @@ export default function Main() {
                         categories={shopSidebarData}
                         isNav={false}
                     />
-                    {/* SIDEBAR COMPONENT */}
-
                     <div className="shop-products">
                         <div className="products-container">
                             <div className="sidebar-toggle--shop">
@@ -28,106 +47,20 @@ export default function Main() {
                                 <span onClick={showSidebar}>Filter</span>
                             </div>
                             <form className="shop-sort">
-                                <select className="select-sort">
-                                    <option>Sort: Price Low To High</option>
-                                    <option>Sort: Price Hight To Low</option>
-                                </select>
+                            <select className="select-sort" value={sortType} onChange={handleSortChange}>
+                                <option value="">Sort: Relevance</option>
+                                <option value="lowToHigh">Sort: Price Low To High</option>
+                                <option value="highToLow">Sort: Price High To Low</option>
+                            </select>
                             </form>
                             <div className="products--container">
-                                <div className="shop-card--container">
 
-                                {/* CARD COMPONENT  */}
-                                    <div className="card shop-card">
-                                        <div className="card-top">
-                                            <img src={require('../../assets/images/test.png')} alt =" "/>
-                                            <div className="overlay">
-                                                <a href="" className="buy-btn">Add to cart</a>
-                                            </div>
-                                            <div className="card-bottom">
-                                                <h5 className="card-name">BRUTIA HOODIE</h5>
-                                                <div className="card-cart--info">
-                                                    <button className="card-cart btn-black">Add to cart</button>
-                                                    <span className="card-price">$26</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="card shop-card">
-                                        <div className="card-top">
-                                            <img src={require('../../assets/images/test.png')} alt =" "/>
-                                            <div className="overlay">
-                                                <a href="" className="buy-btn">Add to cart</a>
-                                            </div>
-                                            <div className="card-bottom">
-                                                <h5 className="card-name">BRUTIA HOODIE</h5>
-                                                <div className="card-cart--info">
-                                                    <button className="card-cart btn-black">Add to cart</button>
-                                                    <span className="card-price">$26</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="card shop-card">
-                                        <div className="card-top">
-                                            <img src={require('../../assets/images/test.png')} alt =" "/>
-                                            <div className="overlay">
-                                                <a href="" className="buy-btn">Add to cart</a>
-                                            </div>
-                                            <div className="card-bottom">
-                                                <h5 className="card-name">BRUTIA HOODIE</h5>
-                                                <div className="card-cart--info">
-                                                    <button className="card-cart btn-black">Add to cart</button>
-                                                    <span className="card-price">$26</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="card shop-card">
-                                        <div className="card-top">
-                                            <img src={require('../../assets/images/test.png')} alt =" "/>
-                                            <div className="overlay">
-                                                <a href="" className="buy-btn">Add to cart</a>
-                                            </div>
-                                            <div className="card-bottom">
-                                                <h5 className="card-name">BRUTIA HOODIE</h5>
-                                                <div className="card-cart--info">
-                                                    <button className="card-cart btn-black">Add to cart</button>
-                                                    <span className="card-price">$26</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="card shop-card">
-                                        <div className="card-top">
-                                            <img src={require('../../assets/images/test.png')} alt =" "/>
-                                            <div className="overlay">
-                                                <a href="" className="buy-btn">Add to cart</a>
-                                            </div>
-                                            <div className="card-bottom">
-                                                <h5 className="card-name">BRUTIA HOODIE</h5>
-                                                <div className="card-cart--info">
-                                                    <button className="card-cart btn-black">Add to cart</button>
-                                                    <span className="card-price">$26</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="card shop-card">
-                                        <div className="card-top">
-                                            <img src={require('../../assets/images/test.png')} alt =" "/>
-                                            <div className="overlay">
-                                                <a href="" className="buy-btn">Add to cart</a>
-                                            </div>
-                                            <div className="card-bottom">
-                                                <h5 className="card-name">BRUTIA HOODIE</h5>
-                                                <div className="card-cart--info">
-                                                    <button className="card-cart btn-black">Add to cart</button>
-                                                    <span className="card-price">$26</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                {/* CARD COMPONENT  */}
+                                <div className="shop-card--container">
+                                {sortedItems.map((item) => (
+                                <div key={item.id}>
+                                    <Card item={item} />
+                                </div>
+                                ))}
                                 </div>
 
                             </div>
