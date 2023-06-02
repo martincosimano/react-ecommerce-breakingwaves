@@ -38,9 +38,23 @@ body, h1,h2,h3,h4,h5,h6, p, a, ul {
 * {
   box-sizing: border-box;
 }
+html, body {
+  height: 100%;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 .container {
   margin-inline: auto;
   width: min(90%, 70.5rem);
+}
+main {
+  flex: 1;
+}
+footer {
+  flex-shrink: 0;
 }
 .split {
   display: flex;

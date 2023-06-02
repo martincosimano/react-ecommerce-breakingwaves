@@ -65,7 +65,7 @@
 /*******************************************/
 
 .bg-img {
-  height: 45rem;
+  height: 100vh;
   background-image: url(../assets/images/home.jpg);
   background-position: center center;
   background-size: cover;

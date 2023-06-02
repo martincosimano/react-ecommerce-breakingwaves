@@ -55,6 +55,7 @@
 /* LAYOUT
 /*******************************************/
 .footer-bg {
+    max-height: 100vh;
     background-image: url("../assets/images/footer-background.png");
     background-size: cover;
     background-repeat: no-repeat;

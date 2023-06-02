@@ -3,8 +3,6 @@ import Main from '../components/About/Main'
 
 export default function About() {
     return (
-        <div>
-            <Main />
-        </div>
+        <Main />
     )
 }
