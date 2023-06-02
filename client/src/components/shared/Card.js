@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../../styles/components/card.css'
 
 export default function Card({ item }) {
   const [defaultImage, setDefaultImage] = useState({});
@@ -32,8 +33,8 @@ export default function Card({ item }) {
         <div className="card-bottom">
           <h5 className="card-name">{item.productName}</h5>
           <div className="card-cart--info">
-            <button className="card-cart btn-black">Add to cart</button>
             <span className="card-price">{item.productPrice}</span>
+            <button className="card-cart btn-black">Cart</button>
           </div>
         </div>
       </div>
