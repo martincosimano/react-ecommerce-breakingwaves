@@ -40,12 +40,14 @@
 .shop-container,
 .shop-card--container {
     display: flex;
+    justify-content: center;
 }
 .shop-card--container {
     flex-wrap: wrap;
 }
 .products--container {
     width: 100%;
+    margin-top: 1rem;
 }
 .shop-card {
     width: 33%;
@@ -86,11 +88,13 @@
 /* ADDITIONAL STYLES
 /*******************************************/
 .select-sort {
+    color: var(--clr-font-secondary);
     font-family: var(--ff-primary);
     font-size: var(--fs-400);
     box-shadow: inset 0 -1.4em 1em 0 rgba(0,0,0,.02);
     background-color: var(--clr-background-secondary);
     border: 1px solid #ddd;
+    border-radius: 0;
     padding: 0 .75em;
     height: 2.507em;
 }

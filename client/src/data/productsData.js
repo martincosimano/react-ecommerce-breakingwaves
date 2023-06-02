@@ -1,9 +1,9 @@
 export const productsData = [
     {
       id: 1,
-      productName: 'Heavy crafted shirt',
-      productPrice: '$25.99',
-      productImage: 'https://res.cloudinary.com/dx5ndnahy/image/upload/v1685029974/product-1_pbltho.png',
+      productName: 'Palmero white shirt',
+      productPrice: '$29.99',
+      productImage: 'https://res.cloudinary.com/dx5ndnahy/image/upload/v1685029974/product-3_dzivs4.png',
       productCategory: 'T-Shirts',
     },
     {
@@ -15,9 +15,9 @@ export const productsData = [
     },
     {
       id: 3,
-      productName: 'Palmero white shirt',
-      productPrice: '$29.99',
-      productImage: 'https://res.cloudinary.com/dx5ndnahy/image/upload/v1685029974/product-3_dzivs4.png',
+      productName: 'Heavy crafted shirt',
+      productPrice: '$25.99',
+      productImage: 'https://res.cloudinary.com/dx5ndnahy/image/upload/v1685029974/product-1_pbltho.png',
       productCategory: 'T-Shirts',
     },
     {

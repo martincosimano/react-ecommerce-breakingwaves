@@ -133,7 +133,7 @@
     display: flex;
     justify-content: center;
     margin-top: 3rem;
-    padding-block: 0.5rem;
+    padding-block: 1rem;
     opacity: 0.5;
 }
 .nav-footer--icons {
