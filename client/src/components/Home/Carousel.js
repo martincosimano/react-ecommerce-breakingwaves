@@ -55,7 +55,7 @@ export default function Carousel() {
             <h2 className="slider-title decorated">Trending Now</h2>
             <Slider {...settings}>
                 {dataDigitalBestSeller.map((item) => (
-              <div className="card">
+              <div key={item.productName} className="card">
                 <div className="card-top">
                 <img
                     src={
@@ -67,7 +67,7 @@ export default function Carousel() {
                   onError={handleErrorImage}
                   />
                   <div className="overlay">
-                    <a href="" class="buy-btn">Add to cart</a>
+                    <a href="" className="buy-btn">Add to cart</a>
                   </div>
                   <div className="card-bottom">
                     <h5 className="card-name">{item.productName}</h5>

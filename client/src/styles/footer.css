@@ -62,10 +62,10 @@
 }
 .nav-info {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     max-width: 100%;
     min-height: 5rem;
-    padding-inline: 0.5rem;
+    gap: 1rem;
 }
 .nav-info--img img {
     width: 3.75rem;
@@ -75,6 +75,10 @@
     display: inline-flex;
     align-items: center;
     gap: 1rem;
+}
+.nav-info--icon {
+    color: var(--clr-font-primary);
+    font-size: 2.5rem;
 }
 .nav-footer {
     padding-top: 2rem;

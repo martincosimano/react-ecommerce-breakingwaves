@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import * as FaIcons from "react-icons/fa";
 import Sidebar from "../Shop/Sidebar";
+import { SidebarData } from "./Sidebardata";
 import { Link } from "react-router-dom";
 import { IconContext } from "react-icons";
 
@@ -68,7 +69,9 @@ export default function Navbar() {
             // Display hamburger menu for screens below 560px
             <div className="navbar">
               <div className="logo-container">
-                <a href=""><img src={require("../../assets/images/logo.png")} alt=""/></a>
+              <Link to="/">
+                <img src={require("../../assets/images/logo.png")} alt=""/>
+              </ Link>
               </div>
               <Link to="#" className="menu-bars">
                 <FaIcons.FaBars onClick={showSidebar} />
@@ -76,6 +79,9 @@ export default function Navbar() {
               <Sidebar 
                 sidebar={sidebar}
                 showSidebar={showSidebar}
+                title={'Breaking Waves'}
+                categories={SidebarData}
+                isNav={true}
               />
             </div>
           )}

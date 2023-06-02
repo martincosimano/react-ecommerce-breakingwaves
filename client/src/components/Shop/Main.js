@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import '../../styles/shop.css'
 import Sidebar from '../../components/Shop/Sidebar';
+import { SidebarData } from './Sidebardata';
 import * as ImIcons from "react-icons/im";
 
 export default function Main() {
@@ -15,6 +16,9 @@ export default function Main() {
                     <Sidebar 
                         sidebar={sidebar}
                         showSidebar={showSidebar}
+                        title={'Category'}
+                        categories={SidebarData}
+                        isNav={false}
                     />
                     {/* SIDEBAR COMPONENT */}
 
@@ -38,7 +42,7 @@ export default function Main() {
                                         <div className="card-top">
                                             <img src={require('../../assets/images/test.png')} alt =" "/>
                                             <div className="overlay">
-                                                <a href="" class="buy-btn">Add to cart</a>
+                                                <a href="" className="buy-btn">Add to cart</a>
                                             </div>
                                             <div className="card-bottom">
                                                 <h5 className="card-name">BRUTIA HOODIE</h5>
@@ -53,7 +57,7 @@ export default function Main() {
                                         <div className="card-top">
                                             <img src={require('../../assets/images/test.png')} alt =" "/>
                                             <div className="overlay">
-                                                <a href="" class="buy-btn">Add to cart</a>
+                                                <a href="" className="buy-btn">Add to cart</a>
                                             </div>
                                             <div className="card-bottom">
                                                 <h5 className="card-name">BRUTIA HOODIE</h5>
@@ -68,7 +72,7 @@ export default function Main() {
                                         <div className="card-top">
                                             <img src={require('../../assets/images/test.png')} alt =" "/>
                                             <div className="overlay">
-                                                <a href="" class="buy-btn">Add to cart</a>
+                                                <a href="" className="buy-btn">Add to cart</a>
                                             </div>
                                             <div className="card-bottom">
                                                 <h5 className="card-name">BRUTIA HOODIE</h5>
@@ -83,7 +87,7 @@ export default function Main() {
                                         <div className="card-top">
                                             <img src={require('../../assets/images/test.png')} alt =" "/>
                                             <div className="overlay">
-                                                <a href="" class="buy-btn">Add to cart</a>
+                                                <a href="" className="buy-btn">Add to cart</a>
                                             </div>
                                             <div className="card-bottom">
                                                 <h5 className="card-name">BRUTIA HOODIE</h5>
@@ -98,7 +102,7 @@ export default function Main() {
                                         <div className="card-top">
                                             <img src={require('../../assets/images/test.png')} alt =" "/>
                                             <div className="overlay">
-                                                <a href="" class="buy-btn">Add to cart</a>
+                                                <a href="" className="buy-btn">Add to cart</a>
                                             </div>
                                             <div className="card-bottom">
                                                 <h5 className="card-name">BRUTIA HOODIE</h5>
@@ -113,7 +117,7 @@ export default function Main() {
                                         <div className="card-top">
                                             <img src={require('../../assets/images/test.png')} alt =" "/>
                                             <div className="overlay">
-                                                <a href="" class="buy-btn">Add to cart</a>
+                                                <a href="" className="buy-btn">Add to cart</a>
                                             </div>
                                             <div className="card-bottom">
                                                 <h5 className="card-name">BRUTIA HOODIE</h5>
