@@ -57,9 +57,10 @@ export default function Main() {
 
                                 <div className="shop-card--container">
                                 {sortedItems.map((item) => (
-                                <div key={item.id}>
-                                    <Card item={item} />
-                                </div>
+                                    <Card 
+                                    item={item}
+                                    isShop={true}  
+                                    />
                                 ))}
                                 </div>
 

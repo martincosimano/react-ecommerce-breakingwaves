@@ -105,11 +105,6 @@ footer {
 /******************************************
 /* MEDIA QUERY
 /*******************************************/
-@media (max-width: 73rem) {
-  .card-cart.btn-black {
-    padding: 0.3rem 0.8rem;
-  }
-}
 
 @media (max-width: 40rem) {
   .split {

@@ -67,48 +67,54 @@
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
-.card-top:hover .overlay{
-    visibility: visible;
-    animation: fade 0.5s;
-}
-@keyframes fade {
-    0%{
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-}
 .card-cart {
-    display: none;
+    display: block;
+    margin-top: 0.5rem;
+}
+.card-cart--info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap:0
+}
+.card-cart.btn-black {
+    margin-top: 1rem;
+    padding: 0.5rem 2rem;
+}
+.slick-slide,
+.slick-slide > div {
+    min-height: 25rem;
+}
+.card,
+.card-top {
+    min-height: 25rem;
+}
+.card-bottom {
+    height: 100%;
+    min-height: 11rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 /******************************************
 /* MEDIA QUERY
 /*******************************************/
 
 @media (max-width: 73rem) {
-    .overlay {
-        display: none;
-    }
-    .card-cart--info {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        gap:0
-    }
-    .card-cart {
-        display: block;
-        margin-top: 0.5rem;
-    }
     .card-top {
+        height: 28rem;
         width: 10rem;
         margin-inline: 0.5rem;
+    }
+    .card-cart.btn-black {
+        padding: 0.3rem 0.8rem;
     }
 }
 
 @media (max-width: 40rem) {
     .card-top {
+        height: 25rem;
         width: 8.5rem;
     }
 }

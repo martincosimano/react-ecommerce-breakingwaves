@@ -27,18 +27,24 @@ export default function Carousel() {
         },
       },
       {
-        breakpoint: 750,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          initialSlide: 3,
-        },
-      },
-      {
-        breakpoint: 560,
+        breakpoint: 550,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 450,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 330,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
         },
       },
     ],
@@ -50,9 +56,10 @@ export default function Carousel() {
         <h2 className="slider-title decorated">Trending Now</h2>
         <Slider {...settings}>
           {limitedItems.map((item) => (
-            <div key={item.id}>
-              <Card item={item} />
-            </div>
+              <Card 
+              item={item}
+              isShop={false} 
+              />
           ))}
         </Slider>
         <div className="btn-container-carousel">

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../../styles/components/card.css'
 
-export default function Card({ item }) {
+export default function Card(props) {
   const [defaultImage, setDefaultImage] = useState({});
   
   const handleErrorImage = (data) => {
@@ -14,26 +14,21 @@ export default function Card({ item }) {
   };
 
   return (
-    <div key={item.productName} className="card">
-      <div className="card-top">
+    <div key={props.item.productName} className="card">
+      <div className={props.isShop ? "card-top shop" : "card-top carousel"}>
         <img
           src={
-            defaultImage[item.productName] === item.productName
+            defaultImage[props.item.productName] === props.item.productName
               ? defaultImage.linkDefault
-              : item.productImage
+              : props.item.productImage
           }
-          alt={item.productName}
+          alt={props.item.productName}
           onError={handleErrorImage}
         />
-        <div className="overlay">
-          <a href="" className="buy-btn">
-            Add to cart
-          </a>
-        </div>
         <div className="card-bottom">
-          <h5 className="card-name">{item.productName}</h5>
+          <h5 className="card-name">{props.item.productName}</h5>
           <div className="card-cart--info">
-            <span className="card-price">{item.productPrice}</span>
+            <span className="card-price">{props.item.productPrice}</span>
             <button className="card-cart btn-black">Cart</button>
           </div>
         </div>
