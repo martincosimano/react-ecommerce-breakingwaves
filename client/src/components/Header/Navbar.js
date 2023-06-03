@@ -35,7 +35,7 @@ export default function Navbar() {
               </div>
               <nav className="nav-header">
                 <div className="navlist-flex">
-                  <ul className="nav-ul">
+                  <ul className="nav-ul header">
                     <li className="logo-hold">
                     <Link to="/">
                       <span className="logo-text">Breaking Waves</span>

@@ -6,7 +6,7 @@ export default function AboutSection() {
         <section className="about-section">
             <div className="container">
                 <div className="split">
-                    <div>
+                    <div className="first-splitted">
                         <h3 className="home-about-title">Clothing designed<br/> for adventure.</h3>
                         <div className="btn-container-about">
                             <Link to="/about"><button className="btn-black">Read about us</button></Link>

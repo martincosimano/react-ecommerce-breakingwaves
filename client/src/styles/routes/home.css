@@ -75,7 +75,6 @@
   border-radius: 0.125rem;
   box-shadow: 0.125rem 0.125rem 1.875rem rgba(0, 0, 0, 0.2);
 }
-
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
@@ -140,5 +139,8 @@
   .btn-container-about {
     justify-content: center;
     padding-bottom: 3rem;
+  }
+  .first-splitted {
+    margin-top: 4rem;
   }
 }

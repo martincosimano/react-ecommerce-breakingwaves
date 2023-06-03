@@ -63,10 +63,6 @@
     padding-top: 0.5rem;
     letter-spacing: 0.1rem;
 }
-
-/******************************************
-/* ADDITIONAL STYLES
-/*******************************************/
 .card-cart {
     display: block;
     margin-top: 0.5rem;
@@ -78,14 +74,8 @@
     align-items: center;
     gap:0
 }
-.card-cart.btn-black {
-    margin-top: 1rem;
-    padding: 0.5rem 2rem;
-}
 .slick-slide,
-.slick-slide > div {
-    min-height: 25rem;
-}
+.slick-slide > div,
 .card,
 .card-top {
     min-height: 25rem;
@@ -97,6 +87,14 @@
     flex-direction: column;
     justify-content: space-around;
 }
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+.card-cart.btn-black {
+    margin-top: 1rem;
+    padding: 0.5rem 2rem;
+}
+
 /******************************************
 /* MEDIA QUERY
 /*******************************************/
