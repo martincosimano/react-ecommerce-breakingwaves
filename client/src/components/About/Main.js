@@ -7,7 +7,7 @@ export default function Main() {
         <main>
             <div className="container">
                 <div className="container-main-title">
-                    <h1 className="main-title decorated">A Brief History of<br/> Breaking Waves:</h1>
+                    <h1 className="main-title decorated">History of Breaking Waves</h1>
                 </div>
                 <VerticalTimeline lineColor="#000">
                     <VerticalTimelineElement

@@ -24,7 +24,6 @@
 .main-title {
     font-size: var(--fs-xl);
     font-family: var(--ff-primary);
-    text-transform: uppercase;
     text-align: center;
     line-height: 1.5;
 }
