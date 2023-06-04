@@ -21,30 +21,24 @@ export default function Carousel() {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
         },
       },
       {
         breakpoint: 550,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        useTransform: false,
         },
       },
       {
-        breakpoint: 450,
+        breakpoint: 374,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        },
-      },
-      {
-        breakpoint: 330,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
+        slidesToShow: 1,
+        slidesToScroll: 1,
         },
       },
     ],

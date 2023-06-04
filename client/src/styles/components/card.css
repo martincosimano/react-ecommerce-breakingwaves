@@ -1,15 +1,28 @@
+:root {
+    --clr-background-primary: #131114 ;
+    --clr-background-secondary: #fff;
+
+    --clr-font-primary: #fff;
+    --clr-font-secondary: #131114;
+
+    --fs-xl: 2rem; 
+    --fs-700: 1.75rem;
+    --fs-600: 1.5rem;
+    --fs-500: 1rem;
+    --fs-400: 0.85rem;
+    --fs-300: 0.75rem;
+
+    --ff-logo: 'Sail', sans-serif;
+    --ff-primary: 'Montserrat', sans-serif;
+    --ff-secondary: 'Dosis', sans-serif;
+    --ff-tertiary: 'Fira Sans Condensed', sans-serif;
+}
+
 /******************************************
 /* BASE STYLES
 /*******************************************/
 .card-bottom {
     background-color: var(--clr-background-secondary);
-    border-radius: 0 0 0.625rem 0.625rem;
-}
-.card-top {
-    border-radius: 0.625rem;
-}
-.card-top img  {
-    border-radius: 0.625rem 0.625rem 0 0;
 }
 .card-name,
 .card-price {
@@ -101,8 +114,8 @@
 
 @media (max-width: 73rem) {
     .card-top {
-        height: 28rem;
-        width: 10rem;
+        height: 30rem;
+        width: 12rem;
         margin-inline: 0.5rem;
     }
     .card-cart.btn-black {
@@ -110,9 +123,9 @@
     }
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 42rem) {
     .card-top {
-        height: 25rem;
-        width: 8.5rem;
+        height: 28rem;
+        width: 10rem;
     }
 }
