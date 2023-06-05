@@ -50,7 +50,8 @@ export default function Carousel() {
         <h2 className="slider-title decorated">Trending Now</h2>
         <Slider {...settings}>
           {limitedItems.map((item) => (
-              <Card 
+              <Card
+              key={item.id} 
               item={item}
               isShop={false} 
               />
