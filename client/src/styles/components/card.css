@@ -66,6 +66,7 @@
     width: 100%;
     position: relative;
     cursor: pointer;
+    min-height: 20.75rem;
 }
 .card-name {
     padding-bottom: 0.5rem;
@@ -120,6 +121,9 @@
     }
     .card-cart.btn-black {
         padding: 0.3rem 0.8rem;
+    }
+    .card-top img {
+        min-height: 15.188rem;
     }
 }
 
