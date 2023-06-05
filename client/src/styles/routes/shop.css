@@ -111,6 +111,10 @@
     color: var(--clr-font-secondary);
     border: 2px solid var(--clr-background-primary);
 }
+.current {
+    background-color: var(--clr-background-primary);
+    color: var(--clr-font-primary);
+}
 .sidebar-toggle--shop span,
 .sidebar-toggle--shop svg {
     cursor: pointer;

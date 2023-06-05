@@ -2,7 +2,7 @@ export const productsData = [
     {
       id: 1,
       productName: 'Palmero white shirt',
-      productPrice: '$29.99',
+      productPrice: '$33.99',
       productImage: 'https://res.cloudinary.com/dx5ndnahy/image/upload/v1685029974/product-3_dzivs4.png',
       productCategory: 't-shirts',
     },
@@ -16,7 +16,7 @@ export const productsData = [
     {
       id: 3,
       productName: 'Heavy crafted shirt',
-      productPrice: '$25.00',
+      productPrice: '$35.00',
       productImage: 'https://res.cloudinary.com/dx5ndnahy/image/upload/v1685029974/product-1_pbltho.png',
       productCategory: 't-shirts',
     },
@@ -30,7 +30,7 @@ export const productsData = [
     {
       id: 5,
       productName: 'Seaside black sweatpants',
-      productPrice: '$34.00',
+      productPrice: '$49.00',
       productImage: 'https://res.cloudinary.com/dx5ndnahy/image/upload/v1685029974/product-5_bk9wnm.png',
       productCategory: 'pants-&-sweatpants',
     },
@@ -94,7 +94,7 @@ export const productsData = [
     id: 14,
     productName: 'Crew Pullover',
     productPrice: '$72.00',
-    productImage: 'https://res.cloudinary.com/dx5ndnahy/image/upload/v1685925269/product-14_crd6ey.png',
+    productImage: 'https://res.cloudinary.com/dx5ndnahy/image/upload/v1685931905/product-14_itp6la.png',
     productCategory: 'hoodies-&-jackets',
   },
   {

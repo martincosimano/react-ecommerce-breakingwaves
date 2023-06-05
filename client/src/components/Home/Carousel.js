@@ -7,7 +7,7 @@ import Card from '../shared/Card';
 import { productsData } from '../../data/productsData';
 
 export default function Carousel() {
-  const [limitedItems] = useState(productsData.slice(0, 10));
+  const [limitedItems] = useState(productsData.slice(0, 9));
 
   const settings = {
     dots: true,
