@@ -8,10 +8,11 @@ export default function Sidebar(props) {
 
     const categoryElements = categories.map(category => (
             <li className={`category-item ${category.cName}`} key={category.id} onClick={props.showSidebar}>
-                <Link to={`${category.path}`}>
-                    {props.isNav && category.icon}
-                    <span>{category.title}</span>
-                </Link>
+            <Link to={`${category.path}`}>
+                {props.isNav && category.icon}
+                <span>{category.title}</span>
+                {category.title === "Cart" && <span className="cart-items-number">{props.cartItems}</span>}
+            </Link>
             </li>
     ))
 

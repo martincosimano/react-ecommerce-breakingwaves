@@ -4,11 +4,12 @@ import Carousel from '../components/Home/Carousel';
 import AboutSection from '../components/Home/AboutSection';
 import '../styles/routes/home.css';
 
-export default function Home() {
+export default function Home(props) {
+    
     return (
         <div>
             <Main />
-            <Carousel />
+            <Carousel checkItem={props.checkItem} />
             <AboutSection />
         </div>
     )

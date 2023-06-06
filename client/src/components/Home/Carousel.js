@@ -6,7 +6,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import Card from '../shared/Card';
 import { productsData } from '../../data/productsData';
 
-export default function Carousel() {
+export default function Carousel(props) {
   const [limitedItems] = useState(productsData.slice(0, 9));
 
   const settings = {
@@ -44,6 +44,12 @@ export default function Carousel() {
     ],
   };
 
+  const checkItem = (item) => {
+    if (props.checkItem) {
+      props.checkItem(item);
+    }
+  };
+
   return (
     <section className="slider-section">
       <div className="container">
@@ -53,7 +59,8 @@ export default function Carousel() {
               <Card
               key={item.id} 
               item={item}
-              isShop={false} 
+              isShop={false}
+              checkItem={checkItem} 
               />
           ))}
         </Slider>

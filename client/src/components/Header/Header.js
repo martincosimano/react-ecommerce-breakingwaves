@@ -2,11 +2,11 @@ import React from 'react';
 import Navbar from './Navbar';
 import '../../styles/components/header.css';
 
-export default function Header() {
+export default function Header(props) {
     return (
         <header>
         <div className="container">
-            <Navbar />
+            <Navbar cartItems={props.cartItems} />
         </div>
     </header>
     )

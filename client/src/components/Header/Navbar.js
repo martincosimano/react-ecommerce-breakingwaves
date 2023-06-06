@@ -5,7 +5,7 @@ import { navSidebarData } from "../../data/navSidebardata";
 import { Link } from "react-router-dom";
 import { IconContext } from "react-icons";
 
-export default function Navbar() {
+export default function Navbar(props) {
     const [sidebar, setSidebar] = useState(false);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   
@@ -60,6 +60,7 @@ export default function Navbar() {
                     </li>
                     <li>
                       <a href="" className="nav-anchor nav-cart"><FaIcons.FaShoppingCart/></a>
+                      <span className="cart-items-number">{props.cartItems}</span>
                     </li>
                   </ul>
                 </div>
@@ -82,6 +83,7 @@ export default function Navbar() {
                 title={'Breaking Waves'}
                 categories={navSidebarData}
                 isNav={true}
+                cartItems={props.cartItems}
               />
             </div>
           )}

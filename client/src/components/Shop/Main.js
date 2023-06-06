@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from "react";
+import React from "react";
 import { useParams, useLocation, Link } from 'react-router-dom';
 import Sidebar from "../shared/Sidebar";
 import Card from "../shared/Card";
@@ -16,13 +16,13 @@ function sortItems(items, sortType) {
   }
 }
 
-export default function Shop() {
-  const [sidebar, setSidebar] = useState(false);
+export default function Shop(props) {
+  const [sidebar, setSidebar] = React.useState(false);
   const showSidebar = () => setSidebar(!sidebar);
 
   const { category } = useParams();
-  const [sortType, setSortType] = useState("");
-  const [currentPage, setCurrentPage] = useState(1);
+  const [sortType, setSortType] = React.useState("");
+  const [currentPage, setCurrentPage] = React.useState(1);
   const location = useLocation();
 
   const handleSortChange = (e) => {
@@ -30,9 +30,9 @@ export default function Shop() {
     setCurrentPage(1);
   };
 
-  const sortedItems = useMemo(() => sortItems(productsData, sortType), [sortType]);
+  const sortedItems = React.useMemo(() => sortItems(productsData, sortType), [sortType]);
 
-  const filteredItems = useMemo(() => {
+  const filteredItems = React.useMemo(() => {
     if (category) {
       return sortedItems.filter((item) => item.productCategory === category);
     } else {
@@ -46,7 +46,7 @@ export default function Shop() {
   const endIndex = startIndex + itemsPerPage;
   const currentItems = filteredItems.slice(startIndex, endIndex);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
     const page = parseInt(searchParams.get('page'));
     if (!isNaN(page) && page >= 1 && page <= totalPages) {
@@ -56,9 +56,14 @@ export default function Shop() {
     }
   }, [location.search, totalPages]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentPage]);
+
+
+  function checkItem(item) {
+    props.checkItem(item);
+  }
 
   return (
     <main className="shop-main">
@@ -87,7 +92,12 @@ export default function Shop() {
               <div className="products--container">
                 <div className="shop-card--container">
                   {currentItems.map((item) => (
-                    <Card item={item} isShop={true} key={item.id} />
+                    <Card 
+                    item={item} 
+                    isShop={true} 
+                    key={item.id}
+                    checkItem={checkItem} 
+                    />
                   ))}
                 </div>
               </div>

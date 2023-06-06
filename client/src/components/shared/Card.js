@@ -12,7 +12,7 @@ export default function Card(props) {
         'https://res.cloudinary.com/dx5ndnahy/image/upload/v1685044743/default_kkp3xd.png',
     }));
   };
-
+  
   return (
     <div key={props.item.productName} className="card">
       <div className={props.isShop ? "card-top shop" : "card-top carousel"}>
@@ -29,7 +29,7 @@ export default function Card(props) {
           <h5 className="card-name">{props.item.productName}</h5>
           <div className="card-cart--info">
             <span className="card-price">{props.item.productPrice}</span>
-            <button className="card-cart btn-black">Cart</button>
+            <button className="card-cart btn-black" onClick={() => props.checkItem(props.item)}>Cart</button>
           </div>
         </div>
       </div>
