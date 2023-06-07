@@ -31,7 +31,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <Header cartItems={cartItems.length} />
+      <Header cartItems={cartItems} />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home checkItem={checkItem} />} />

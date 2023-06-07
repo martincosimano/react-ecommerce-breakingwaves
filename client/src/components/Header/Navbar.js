@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import * as FaIcons from "react-icons/fa";
 import Sidebar from "../shared/Sidebar";
+import Dropdown from "../shared/Dropdown";
 import { navSidebarData } from "../../data/navSidebardata";
 import { Link } from "react-router-dom";
 import { IconContext } from "react-icons";
 
 export default function Navbar(props) {
-    const [sidebar, setSidebar] = useState(false);
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [sidebar, setSidebar] = React.useState(false);
+    const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
   
     const showSidebar = () => setSidebar(!sidebar);
+    const [open, setOpen] = React.useState(false);
   
-    useEffect(() => {
+    React.useEffect(() => {
       const handleWindowResize = () => {
         setWindowWidth(window.innerWidth);
       };
@@ -22,9 +24,25 @@ export default function Navbar(props) {
         window.removeEventListener("resize", handleWindowResize);
       };
     }, []);
+    
+    const groupedItems = React.useMemo(() => {
+      return props.cartItems.reduce((acc, item) => {
+        if (acc[item.productName]) {
+          acc[item.productName].count += 1;
+        } else {
+          const price = (item.productPrice.replace("$", ""));
+          acc[item.productName] = {
+            count: 1,
+            price: isNaN(price) ? 0 : price,
+            smallImg: item.productImage,
+          };
+        }
+        return acc;
+      }, {});
+    }, [props.cartItems]);
   
     return (
-        <IconContext.Provider value={{ color: "undefined" }}>
+        <IconContext.Provider value={{ color: "white" }}>
           {windowWidth > 640 ? (
             // Display full navigation for wider screens
             <div className="nav-container">
@@ -60,7 +78,17 @@ export default function Navbar(props) {
                     </li>
                     <li>
                       <a href="" className="nav-anchor nav-cart"><FaIcons.FaShoppingCart/></a>
-                      <span className="cart-items-number">{props.cartItems}</span>
+                      <span className="cart-items-number" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>{props.cartItems.length}</span>
+                      <div className={`dropdown-menu ${open ? 'active' : 'inactive'}`} onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+                      {Object.entries(groupedItems).map(([item, { count, price, smallImg }], index) => (
+                      <Dropdown
+                        key={index}
+                        text={`x${count} ${item}`}
+                        price={`$ ${Number(price) * count}`}
+                        smallImg={smallImg}
+                      />
+                      ))}
+                      </div>
                     </li>
                   </ul>
                 </div>
@@ -83,7 +111,7 @@ export default function Navbar(props) {
                 title={'Breaking Waves'}
                 categories={navSidebarData}
                 isNav={true}
-                cartItems={props.cartItems}
+                cartItems={props.cartItems.length}
               />
             </div>
           )}
