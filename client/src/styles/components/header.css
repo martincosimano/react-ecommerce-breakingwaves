@@ -22,7 +22,9 @@
 /*******************************************/
 header {
     background-color: var(--clr-background-primary);
-    opacity: 0.9;
+    opacity: 0.95;
+    position: fixed;
+    width: 100%;
 }
 .logo-text {
     font-family: var(--ff-logo);
@@ -95,17 +97,17 @@ header {
 /* ADITIONAL STYLES
 /*******************************************/
 .cart-items-number {
-    display: inline-block;
     font-family: var(--ff-primary);
     font-size: var(--fs-400);
     line-height: 1rem;
     text-align: center;
-    min-width: 1.4rem;
     font-weight: bolder;
     color: #cf2e2e;
     padding: 1px 5px;
     margin-left: 4px;
     cursor: pointer;
+    min-width: 2em;
+    display: inline-block;
 }
 /******************************************
 /* MEDIA QUERY
@@ -123,13 +125,10 @@ header {
 }
 
 @media (max-width: 40rem) {
-    header {
-        position: relative;
-    }
     .navbar {
         display: flex;
         align-items: center;
-        height: 5rem;
+        height: 4rem;
     }
     .logo-container {
         width: 100%;
@@ -144,6 +143,7 @@ header {
         padding: 0;
         margin-left: 0;
         line-height: 1.2rem;
+        min-width: 0;
     }
 
 }

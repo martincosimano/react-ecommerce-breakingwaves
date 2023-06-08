@@ -4,7 +4,7 @@ import 'react-vertical-timeline-component/style.min.css';
 
 export default function Main() {
     return (
-        <main>
+        <main className="about-main">
             <div className="container">
                 <div className="container-main-title">
                     <h1 className="main-title decorated">History of Breaking Waves</h1>

@@ -40,11 +40,8 @@
 /******************************************
 /* LAYOUT
 /*******************************************/
-.about-main--section {
-    margin-top: 8rem;
-}
-.container-main-title {
-    margin-top: 3rem;
+.about-main {
+    margin-top: 6rem;
 }
 .main-title {
     padding-inline: 0.5rem;

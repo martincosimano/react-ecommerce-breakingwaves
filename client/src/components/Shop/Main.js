@@ -8,9 +8,9 @@ import * as ImIcons from "react-icons/im";
 
 function sortItems(items, sortType) {
   if (sortType === "lowToHigh") {
-    return [...items].sort((a, b) => parseFloat(a.productPrice.slice(1)) - parseFloat(b.productPrice.slice(1)));
+    return [...items].sort((a, b) => parseFloat(a.productPrice) - parseFloat(b.productPrice))
   } else if (sortType === "highToLow") {
-    return [...items].sort((a, b) => parseFloat(b.productPrice.slice(1)) - parseFloat(a.productPrice.slice(1)));
+    return [...items].sort((a, b) => parseFloat(b.productPrice) - parseFloat(a.productPrice))
   } else {
     return items;
   }

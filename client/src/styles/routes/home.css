@@ -42,8 +42,8 @@
 /* LAYOUT
 /*******************************************/
 
-.bg-img {
-  height: 100vh;
+.home-main {
+  height: 120vh;
   background-image: url(../../assets/images/home.jpg);
   background-position: center center;
   background-size: cover;
@@ -133,6 +133,9 @@
 /*******************************************/
 
 @media (max-width: 40rem) {
+  .home-main {
+    height: 100vh;
+  }
   .home-about-title {
     text-align: center;
   }

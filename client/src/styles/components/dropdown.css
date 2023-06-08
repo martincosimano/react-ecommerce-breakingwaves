@@ -21,7 +21,9 @@
 /* BASE STYLES
 /*******************************************/
 .dropdown-text,
-.dropdown-price {
+.dropdown-price,
+.dropdown-total-price,
+.dropdown-no-items {
     color: var(--clr-font-primary);
     font-size: var(--fs-400);
     font-family: var(--ff-tertiary);
@@ -38,39 +40,66 @@
     border-bottom: 0.063rem solid #b1b1b1;
     align-items: flex-start;
     justify-content: space-between;
+    height: 6rem;
 }
 .dropdown-img {
     width: 3rem;
-    height: 4rem;
 }
-
+.dropdown-text {
+    width: 7rem;
+}
+.dropdown-price {
+    width: 3rem;
+}
+.dropdown-total-price,
+.dropdown-no-items {
+    text-align: center;
+}
+.dropdown-no-items {
+    text-transform: none;
+    margin-block: 1rem;
+}
 /******************************************
 /* ADITIONAL STYLES
 /*******************************************/
 .dropdown-menu{
-    position: absolute;
+    position: fixed;
     top: 2.3rem;
-    right: 0rem;
     background-color: var(--clr-background-primary);
-    padding: 0.625rem 0.5rem;
-    width: 20rem;
+    padding: 0.625rem 0.8rem;
+    min-width: 15rem;
 }
 .dropdown-menu.active{
+    opacity: 1;
     visibility: visible;
 }
 .dropdown-menu.inactive{
-    opacity: 0;
     visibility: hidden;
 }
 .dropdown-button {
-    font-size: var(--fs-400);
-    border: 1px solid var(--clr-background-secondary);
-    border-radius: 100%;
-    padding-inline: 8px;
-    margin-top: 0.3rem;
+    font-size: 1.3rem;
+    border: none;
     color: var(--clr-font-primary);
     background-color: var(--clr-background-primary);
-    font-family: var(--ff-tertiary);
+    font-family: var(--ff-primary);
     text-align: center;
     cursor: pointer;
+}
+.dropdown-go-cart--container {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.7rem;
+}
+.dropdown-go-cart {
+    color: var(--clr-font-primary);
+    font-family: var(--ff-tertiary);
+    font-size: var(--fs-400);
+    text-transform: uppercase;
+    border: 1px solid var(--clr-background-secondary);
+    background-color: var(--clr-background-primary);
+    padding: 0.3rem 2rem;
+    opacity: 0.9;
+}
+.dropdown-go-cart:hover {
+    opacity: 1;
 }

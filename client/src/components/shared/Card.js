@@ -28,7 +28,7 @@ export default function Card(props) {
         <div className="card-bottom">
           <h5 className="card-name">{props.item.productName}</h5>
           <div className="card-cart--info">
-            <span className="card-price">{props.item.productPrice}</span>
+            <span className="card-price">{`$${props.item.productPrice}`}</span>
             <button className="card-cart btn-black" onClick={() => props.checkItem(props.item)}>Cart</button>
           </div>
         </div>

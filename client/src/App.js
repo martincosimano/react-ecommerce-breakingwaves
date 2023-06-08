@@ -13,25 +13,22 @@ export default function App() {
   const [cartItems, setCartItems] = React.useState([])
 
   React.useEffect(() => {
-    // Retrieve cart items from localStorage on component mount
     const storedCartItems = localStorage.getItem('cartItems');
     if (storedCartItems) {
       setCartItems(JSON.parse(storedCartItems));
     }
   }, []);
   React.useEffect(() => {
-    // Update localStorage when cartItems change
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
   }, [cartItems]);
 
   function checkItem(item) {
     setCartItems((prevCartItems) => [...prevCartItems, item]);
-    // You can also add any additional logic, such as checking for duplicate items or updating item quantities.
   }
 
   return (
     <BrowserRouter>
-      <Header cartItems={cartItems} />
+      <Header cartItems={cartItems} setCartItems={setCartItems} />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home checkItem={checkItem} />} />
