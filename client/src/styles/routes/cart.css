@@ -1,0 +1,108 @@
+:root {
+    --clr-background-primary: #131114 ;
+    --clr-background-secondary: #fff;
+
+    --clr-font-primary: #fff;
+    --clr-font-secondary: #131114;
+
+    --fs-xl: 2rem; 
+    --fs-700: 1.75rem;
+    --fs-600: 1.5rem;
+    --fs-500: 1rem;
+    --fs-400: 0.85rem;
+    --fs-300: 0.75rem;
+
+    --ff-logo: 'Sail', sans-serif;
+    --ff-primary: 'Montserrat', sans-serif;
+    --ff-secondary: 'Dosis', sans-serif;
+    --ff-tertiary: 'Fira Sans Condensed', sans-serif;
+}
+/******************************************
+/* BASE STYLES
+/*******************************************/
+.cart-items .cartlist-container .cartlist-text,
+.cart-items .cartlist-container .cartlist-price,
+.cart-items .cartlist-total-price {
+    color: var(--clr-font-secondary);
+    font-size: var(--fs-500);
+    font-family: var(--ff-primary);
+}
+.empty-cart--text {
+    color: var(--clr-font-secondary);
+    font-size: var(--fs-600);
+    font-family: var(--ff-primary);
+}
+.cart-category-items,
+.cart-summary .cartlist-total-price {
+    color: var(--clr-font-secondary);
+    font-size: var(--fs-500);
+    font-family: var(--ff-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+.cart-main {
+    padding-top: 6rem;
+    min-height: 30rem ;
+    padding-bottom: 3rem;
+}
+.cart-items .cartlist-container .cartlist-img {
+    width: 7rem;
+}
+.empty-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6rem;
+    gap: 2rem;
+}
+.split-grid {
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+.cart-category-items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.cart-items .cartlist-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.cart-product-title {
+    grid-column: 2;
+    text-align: center;
+}
+.cart-product-price {
+    grid-column: 3;
+    text-align: center;
+}
+.cart-product-quantity {
+    text-align: center;
+}
+.cart-items .cartlist-container .cartlist-text,
+.cart-items .cartlist-container .cartlist-price,
+.cart-items .cartlist-container .cartlist-button {
+    margin-block: auto;
+    width: 100%;
+    text-align: center;
+}
+.empty-cart--button {
+    padding-inline: 4rem !important;
+}
+/******************************************
+/* ADITIONAL STYLES
+/*******************************************/
+
+/******************************************
+/* MEDIA QUERY
+/*******************************************/
+
+@media (max-width: 53rem) {
+    .split-grid {
+        display: block;
+    }
+}

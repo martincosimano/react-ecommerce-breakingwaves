@@ -82,6 +82,7 @@ footer {
   text-transform:uppercase;
   cursor: pointer;
   opacity: 0.95;
+  letter-spacing: 0.2rem;
 }
 .btn-black:hover {
   opacity: 1;

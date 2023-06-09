@@ -4,6 +4,6 @@ import '../styles/routes/shop.css'
 
 export default function Shop(props) {
     return (
-        <Main checkItem={props.checkItem}></Main>
+        <Main checkItem={props.checkItem} />
     )
 }

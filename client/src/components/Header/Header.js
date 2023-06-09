@@ -6,7 +6,7 @@ export default function Header(props) {
     return (
         <header>
         <div className="container">
-            <Navbar cartItems={props.cartItems} setCartItems={props.setCartItems} />
+            <Navbar cartItems={props.cartItems} groupedItems={props.groupedItems} totalPrice={props.totalPrice} removeFromCart={props.removeFromCart} />
         </div>
     </header>
     )

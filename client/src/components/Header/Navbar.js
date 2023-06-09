@@ -1,7 +1,7 @@
 import React from "react";
 import * as FaIcons from "react-icons/fa";
 import Sidebar from "../shared/Sidebar";
-import Dropdown from "../shared/Dropdown";
+import CartList from "../shared/CartList";
 import { navSidebarData } from "../../data/navSidebardata";
 import { Link } from "react-router-dom";
 import { IconContext } from "react-icons";
@@ -24,39 +24,6 @@ export default function Navbar(props) {
         window.removeEventListener("resize", handleWindowResize);
       };
     }, []);
-    
-    const groupedItems = React.useMemo(() => {
-      return props.cartItems.reduce((acc, item) => {
-        if (acc[item.productName]) {
-          acc[item.productName].count += 1;
-        } else {
-          const price = item.productPrice;
-          acc[item.productName] = {
-            count: 1,
-            price: Number(price),
-            smallImg: item.productImage,
-          };
-        }
-        return acc;
-      }, {});
-    }, [props.cartItems]);
-
-    const totalPrice = Object.values(groupedItems).reduce(
-      (total, { count, price }) => total + count * price,
-      0
-    );
-
-    const removeFromCart = (itemName) => {
-      const updatedCartItems = [...props.cartItems];
-      const itemIndex = updatedCartItems.findIndex(
-        (item) => item.productName === itemName
-      );
-    
-      if (itemIndex !== -1) {
-        updatedCartItems.splice(itemIndex, 1);
-        props.setCartItems(updatedCartItems);
-      }
-    };
   
     return (
         <IconContext.Provider value={{ color: "white" }}>
@@ -89,29 +56,29 @@ export default function Navbar(props) {
                   </ul>
                 </div>
                 <div className="navlist-flex">
-                  <div className={`dropdown-menu ${open ? 'active' : 'inactive'}`} onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
-                      {Object.entries(groupedItems).map(([item, { count, price, smallImg }], index) => (
-                      <Dropdown
-                        key={index}
+                  <div className={`cartlist-menu ${open ? 'active' : 'inactive'}`} onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+                      {Object.entries(props.groupedItems).map(([item, { count, price, smallImg, id }]) => (
+                      <CartList
+                        key={id}
                         text={`${count} ${item}`}
                         price={`${Number(price * count).toFixed(2)}`}
                         smallImg={smallImg}
-                        removeFromCart={() => removeFromCart(item)}
+                        removeFromCart={() => props.removeFromCart(item)}
                       />
                       ))}
-                      {totalPrice ? (<div>
-                        <p className="dropdown-total-price">Total: {`$ ${totalPrice.toFixed(2)}`} </p>
-                        <div className="dropdown-go-cart--container">
-                          <Link to="/cart" className="dropdown-go-cart">Cart</Link>
+                      {props.totalPrice ? (<div>
+                        <p className="cartlist-total-price">Total: ${props.totalPrice.toFixed(2)} </p>
+                        <div className="cartlist-go-cart--container">
+                          <Link to="/cart" className="cartlist-go-cart">Cart</Link>
                         </div>
-                      </div>) : (<p className="dropdown-no-items">There are no items in your cart</p>)}
+                      </div>) : (<p className="cartlist-no-items">There are no items in your cart</p>)}
                   </div>
                   <ul className="nav-ul">
                     <li>
                       <a href="" className="nav-anchor">Log In/Register</a>
                     </li>
                     <li>
-                      <a href="" className="nav-anchor nav-cart"><FaIcons.FaShoppingCart/></a>
+                      <Link to="/cart" className="nav-cart nav-anchor"><FaIcons.FaShoppingCart/></Link>
                       <span className="cart-items-number" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>{props.cartItems.length}</span>
                     </li>
                   </ul>

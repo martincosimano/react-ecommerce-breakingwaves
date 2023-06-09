@@ -20,10 +20,10 @@
 /******************************************
 /* BASE STYLES
 /*******************************************/
-.dropdown-text,
-.dropdown-price,
-.dropdown-total-price,
-.dropdown-no-items {
+.cartlist-text,
+.cartlist-price,
+.cartlist-total-price,
+.cartlist-no-items {
     color: var(--clr-font-primary);
     font-size: var(--fs-400);
     font-family: var(--ff-tertiary);
@@ -34,49 +34,49 @@
 /******************************************
 /* LAYOUT
 /*******************************************/
-.dropdown-container {
+.cartlist-container {
     display: flex;
     padding-block: 0.2rem;
     border-bottom: 0.063rem solid #b1b1b1;
     align-items: flex-start;
     justify-content: space-between;
-    height: 6rem;
+    min-height: 6rem;
 }
-.dropdown-img {
+.cartlist-img {
     width: 3rem;
 }
-.dropdown-text {
+.cartlist-text {
     width: 7rem;
 }
-.dropdown-price {
+.cartlist-price {
     width: 3rem;
 }
-.dropdown-total-price,
-.dropdown-no-items {
+.cartlist-total-price,
+.cartlist-no-items {
     text-align: center;
 }
-.dropdown-no-items {
+.cartlist-no-items {
     text-transform: none;
     margin-block: 1rem;
+}
+.cartlist-menu{
+    position: fixed;
+    top: 2.3rem;
+    background-color: var(--clr-background-primary);
+    padding: 0.625rem 0.3rem;
+    min-width: 15rem;
 }
 /******************************************
 /* ADITIONAL STYLES
 /*******************************************/
-.dropdown-menu{
-    position: fixed;
-    top: 2.3rem;
-    background-color: var(--clr-background-primary);
-    padding: 0.625rem 0.8rem;
-    min-width: 15rem;
-}
-.dropdown-menu.active{
+.cartlist-menu.active{
     opacity: 1;
     visibility: visible;
 }
-.dropdown-menu.inactive{
+.cartlist-menu.inactive{
     visibility: hidden;
 }
-.dropdown-button {
+.cartlist-button {
     font-size: 1.3rem;
     border: none;
     color: var(--clr-font-primary);
@@ -85,12 +85,12 @@
     text-align: center;
     cursor: pointer;
 }
-.dropdown-go-cart--container {
+.cartlist-go-cart--container {
     display: flex;
     justify-content: center;
     margin-top: 0.7rem;
 }
-.dropdown-go-cart {
+.cartlist-go-cart {
     color: var(--clr-font-primary);
     font-family: var(--ff-tertiary);
     font-size: var(--fs-400);
@@ -100,6 +100,6 @@
     padding: 0.3rem 2rem;
     opacity: 0.9;
 }
-.dropdown-go-cart:hover {
+.cartlist-go-cart:hover {
     opacity: 1;
 }
