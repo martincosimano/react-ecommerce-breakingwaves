@@ -50,7 +50,8 @@
     padding-bottom: 3rem;
 }
 .cart-items .cartlist-container .cartlist-img {
-    width: 7rem;
+    box-shadow: 0 0 0.438rem 0 #717171;
+    width: 6rem;
 }
 .empty-cart {
     display: flex;
@@ -104,5 +105,13 @@
 @media (max-width: 53rem) {
     .split-grid {
         display: block;
+    }
+    .cart-items .cartlist-container .cartlist-img {
+        width: 5rem;
+    }
+}
+@media (max-width: 40rem) {
+    .cart-items .cartlist-container .cartlist-img {
+        width: 3.5rem;
     }
 }

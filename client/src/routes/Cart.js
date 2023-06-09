@@ -19,7 +19,7 @@ export default function Cart(props) {
                     {Object.entries(props.groupedItems).map(([item, { count, price, smallImg, id }]) => (
                         <CartList
                             key={id}
-                            text={`${count} ${item}`}
+                            text={item}
                             price={`${Number(price * count).toFixed(2)}`}
                             smallImg={smallImg}
                             removeFromCart={() => props.removeFromCart(item)}

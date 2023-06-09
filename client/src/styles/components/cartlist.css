@@ -25,8 +25,8 @@
 .cartlist-total-price,
 .cartlist-no-items {
     color: var(--clr-font-primary);
-    font-size: var(--fs-400);
-    font-family: var(--ff-tertiary);
+    font-size: var(--fs-300);
+    font-family: var(--ff-primary);
     margin-top: 0.5rem;
     text-transform: capitalize;
 }
@@ -36,7 +36,7 @@
 /*******************************************/
 .cartlist-container {
     display: flex;
-    padding-block: 0.2rem;
+    padding-block: 0.5rem;
     border-bottom: 0.063rem solid #b1b1b1;
     align-items: flex-start;
     justify-content: space-between;
@@ -47,6 +47,7 @@
 }
 .cartlist-text {
     width: 7rem;
+    padding-left: 0.2rem;
 }
 .cartlist-price {
     width: 3rem;
@@ -84,6 +85,7 @@
     font-family: var(--ff-primary);
     text-align: center;
     cursor: pointer;
+    padding-right: 0.3rem;
 }
 .cartlist-go-cart--container {
     display: flex;

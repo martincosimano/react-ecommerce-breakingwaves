@@ -11,7 +11,7 @@ export default function Sidebar(props) {
             <Link to={`${category.path}`}>
                 {props.isNav && category.icon}
                 <span>{category.title}</span>
-                {category.title === "Cart" && <span className="cart-items-number">{props.cartItems}</span>}
+                {category.title === "Cart" && <Link to="/cart"><span className="cart-items-number">{props.cartItems}</span></Link>}
             </Link>
             </li>
     ))

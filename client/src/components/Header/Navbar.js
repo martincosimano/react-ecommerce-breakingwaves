@@ -60,7 +60,7 @@ export default function Navbar(props) {
                       {Object.entries(props.groupedItems).map(([item, { count, price, smallImg, id }]) => (
                       <CartList
                         key={id}
-                        text={`${count} ${item}`}
+                        text={`x${count} ${item}`}
                         price={`${Number(price * count).toFixed(2)}`}
                         smallImg={smallImg}
                         removeFromCart={() => props.removeFromCart(item)}
@@ -79,7 +79,7 @@ export default function Navbar(props) {
                     </li>
                     <li>
                       <Link to="/cart" className="nav-cart nav-anchor"><FaIcons.FaShoppingCart/></Link>
-                      <span className="cart-items-number" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>{props.cartItems.length}</span>
+                      <Link to="/cart"><span className="cart-items-number" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>{props.cartItems.length}</span></Link>
                     </li>
                   </ul>
                 </div>
