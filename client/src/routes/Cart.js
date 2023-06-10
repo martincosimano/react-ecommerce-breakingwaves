@@ -23,6 +23,8 @@ export default function Cart(props) {
                             price={`${Number(price * count).toFixed(2)}`}
                             smallImg={smallImg}
                             removeFromCart={() => props.removeFromCart(item)}
+                            isCartRoute={true}
+                            countItems={count}
                         />
                     ))}
                   </div>

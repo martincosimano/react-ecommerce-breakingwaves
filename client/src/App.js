@@ -73,7 +73,13 @@ export default function App() {
           path="/shop/:category?"
           element={<Shop checkItem={checkItem} />}
         />
-        <Route path="/cart" element={<Cart cartItems={cartItems} groupedItems={groupedItems} totalPrice={totalPrice} removeFromCart={removeFromCart} />} />
+        <Route path="/cart" element={<Cart 
+        cartItems={cartItems} 
+        groupedItems={groupedItems} 
+        totalPrice={totalPrice} 
+        removeFromCart={removeFromCart}
+          />}
+        />
       </Routes>
       <PreFooter />
       <Footer />
