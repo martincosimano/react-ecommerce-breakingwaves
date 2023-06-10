@@ -27,7 +27,9 @@ export default function Cart(props) {
                     ))}
                   </div>
                   <div className="cart-summary">
-                    <p className="cartlist-total-price">Total: ${props.totalPrice.toFixed(2)} </p>
+                    <h4 className="cart-summary-title">Order Summary ({props.cartItems.length} {props.cartItems.length > 1 ? 'Items' : 'Item'})</h4>
+                    <p className="cartlist-total-price">Total: ${props.totalPrice.toFixed(2)}</p>
+                    <button className="btn-black">Proceed to Checkout</button>
                   </div>
                 </div>) : 
                 (
