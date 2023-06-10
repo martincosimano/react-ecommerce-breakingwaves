@@ -16,16 +16,17 @@ export default function Cart(props) {
                         <h5 className="cart-product-price">Price</h5>
                         <h5 className="cart-product-quantity">Quantity</h5>
                     </div>
-                    {Object.entries(props.groupedItems).map(([item, { count, price, smallImg, id }]) => (
-                        <CartList
-                            key={id}
-                            text={item}
-                            price={`${Number(price * count).toFixed(2)}`}
-                            smallImg={smallImg}
-                            removeFromCart={() => props.removeFromCart(item)}
-                            isCartRoute={true}
-                            countItems={count}
-                        />
+                    {Object.entries(props.groupedItems).map(([key, { count, price, smallImg, id }]) => (
+                    <CartList
+                        key={id}
+                        item={key}
+                        price={`${Number(price * count).toFixed(2)}`}
+                        smallImg={smallImg}
+                        removeFromCart={() => props.removeFromCart(key)}
+                        sumToCart={() => props.sumToCart({ id, productName: key, productPrice: price, productImage: smallImg })}
+                        isCartRoute={true}
+                        countItems={count}
+                    />
                     ))}
                   </div>
                   <div className="cart-summary">

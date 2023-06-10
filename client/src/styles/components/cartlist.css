@@ -94,8 +94,9 @@
 }
 .cartlist-go-cart {
     color: var(--clr-font-primary);
-    font-family: var(--ff-tertiary);
+    font-family: var(--ff-secondary);
     font-size: var(--fs-400);
+    font-weight: bold;
     text-transform: uppercase;
     border: 1px solid var(--clr-background-secondary);
     background-color: var(--clr-background-primary);
@@ -104,4 +105,38 @@
 }
 .cartlist-go-cart:hover {
     opacity: 1;
+}
+.quantity-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.quantity {
+    display: flex;
+    justify-content: space-between;
+    width: 5rem;
+    height: 2rem;
+    border: 0.1rem solid #b1b1b1;
+    color: var(--clr-font-secondary);
+    font-family: var(--ff-primary);
+    font-size: var(--fs-500);
+}
+.quantity-minus,
+.quantity-plus {
+    background-color: #f9f9f9;
+    text-shadow: 1px 1px 1px #fff;
+    padding-inline: 0.5rem;
+    border: none;
+    width: 1.5rem;
+    cursor: pointer;
+}
+.quantity-minus {
+    border-right: 0.1rem solid #b1b1b1;
+}
+.quantity-plus {
+    border-left: 0.1rem solid #b1b1b1;
+}
+.quantity-number {
+    margin-block: auto;
 }

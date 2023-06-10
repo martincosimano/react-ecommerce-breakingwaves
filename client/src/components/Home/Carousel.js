@@ -44,12 +44,6 @@ export default function Carousel(props) {
     ],
   };
 
-  const checkItem = (item) => {
-    if (props.checkItem) {
-      props.checkItem(item);
-    }
-  };
-
   return (
     <section className="slider-section">
       <div className="container">
@@ -60,7 +54,7 @@ export default function Carousel(props) {
               key={item.id} 
               item={item}
               isShop={false}
-              checkItem={checkItem} 
+              checkItem={props.checkItem} 
               />
           ))}
         </Slider>

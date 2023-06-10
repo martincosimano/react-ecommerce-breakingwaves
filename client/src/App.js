@@ -9,22 +9,22 @@ import Footer from './components/Footer/Footer';
 import Shop from './routes/Shop';
 import Cart from './routes/Cart';
 
+function useLocalStorage(key, initialValue) {
+  const [value, setValue] = React.useState(() => {
+    const storedValue = localStorage.getItem(key);
+    return storedValue ? JSON.parse(storedValue) : initialValue;
+  });
+
+  React.useEffect(() => {
+    localStorage.setItem(key, JSON.stringify(value));
+  }, [key, value]);
+
+  return [value, setValue];
+}
+
 export default function App() {
 
   const [cartItems, setCartItems] = useLocalStorage('cartItems', []);
-
-  function useLocalStorage(key, initialValue) {
-    const [value, setValue] = React.useState(() => {
-      const storedValue = localStorage.getItem(key);
-      return storedValue ? JSON.parse(storedValue) : initialValue;
-    });
-  
-    React.useEffect(() => {
-      localStorage.setItem(key, JSON.stringify(value));
-    }, [key, value]);
-  
-    return [value, setValue];
-  }
 
   function checkItem(item) {
     setCartItems((prevCartItems) => [...prevCartItems, item]);
@@ -35,12 +35,12 @@ export default function App() {
       if (acc[item.productName]) {
         acc[item.productName].count += 1;
       } else {
-        const price = item.productPrice;
+        const { id, productPrice, productImage } = item;
         acc[item.productName] = {
-          id: item.id,
+          id,
           count: 1,
-          price: Number(price),
-          smallImg: item.productImage,
+          price: Number(productPrice),
+          smallImg: productImage,
         };
       }
       return acc;
@@ -52,14 +52,26 @@ export default function App() {
     0
   );
 
-  const removeFromCart = (itemName) => {
+  function removeFromCart(itemName) {
     const itemIndex = cartItems.findIndex((item) => item.productName === itemName);
     if (itemIndex !== -1) {
       const updatedCartItems = [...cartItems];
       updatedCartItems.splice(itemIndex, 1);
       setCartItems(updatedCartItems);
     }
+  }
+
+  function sumToCart(item) {
+    const updatedItem = {
+      id: item.id,
+      productName: item.productName,
+      productPrice: item.productPrice,
+      productImage: item.productImage,
   };
+
+  setCartItems((prevCartItems) => [...prevCartItems, updatedItem]);
+}
+
 
 
   return (
@@ -78,6 +90,8 @@ export default function App() {
         groupedItems={groupedItems} 
         totalPrice={totalPrice} 
         removeFromCart={removeFromCart}
+        sumToCart={sumToCart}
+        setCartItems={setCartItems}
           />}
         />
       </Routes>

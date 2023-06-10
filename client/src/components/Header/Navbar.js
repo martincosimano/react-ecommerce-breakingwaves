@@ -60,7 +60,7 @@ export default function Navbar(props) {
                       {Object.entries(props.groupedItems).map(([item, { count, price, smallImg, id }]) => (
                       <CartList
                         key={id}
-                        text={`x${count} ${item}`}
+                        item={`x${count} ${item}`}
                         price={`${Number(price * count).toFixed(2)}`}
                         smallImg={smallImg}
                         removeFromCart={() => props.removeFromCart(item)}
