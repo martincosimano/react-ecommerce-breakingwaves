@@ -17,6 +17,16 @@
     --ff-secondary: 'Dosis', sans-serif;
     --ff-tertiary: 'Fira Sans Condensed', sans-serif;
 }
+@media (max-width: 40rem) {
+    :root {
+      --fs-xl: 1.85rem; 
+      --fs-700: 1.55rem;
+      --fs-600: 1.3rem;
+      --fs-500: 0.9rem;
+      --fs-400: 0.8rem;
+      --fs-300: 0.7rem;
+  }
+}
 /******************************************
 /* BASE STYLES
 /*******************************************/
@@ -124,6 +134,7 @@
 }
 .quantity-minus,
 .quantity-plus {
+    color: var(--clr-font-secondary);
     background-color: #f9f9f9;
     text-shadow: 1px 1px 1px #fff;
     padding-inline: 0.5rem;
@@ -139,4 +150,12 @@
 }
 .quantity-number {
     margin-block: auto;
+}
+/******************************************
+/* MEDIA QUERY
+/*******************************************/
+@media (max-width: 40rem) {
+    .quantity {
+        width: 4.5rem;
+    }
 }

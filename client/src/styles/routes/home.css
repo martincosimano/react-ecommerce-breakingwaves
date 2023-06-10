@@ -1,21 +1,31 @@
 :root {
-    --clr-background-primary: #131114 ;
-    --clr-background-secondary: #fff;
+  --clr-background-primary: #131114 ;
+  --clr-background-secondary: #fff;
 
-    --clr-font-primary: #fff;
-    --clr-font-secondary: #131114;
+  --clr-font-primary: #fff;
+  --clr-font-secondary: #131114;
 
-    --fs-xl: 2rem; 
-    --fs-700: 1.75rem;
-    --fs-600: 1.5rem;
-    --fs-500: 1rem;
-    --fs-400: 0.85rem;
-    --fs-300: 0.75rem;
+  --fs-xl: 2rem; 
+  --fs-700: 1.75rem;
+  --fs-600: 1.5rem;
+  --fs-500: 1rem;
+  --fs-400: 0.85rem;
+  --fs-300: 0.75rem;
 
-    --ff-logo: 'Sail', sans-serif;
-    --ff-primary: 'Montserrat', sans-serif;
-    --ff-secondary: 'Dosis', sans-serif;
-    --ff-tertiary: 'Fira Sans Condensed', sans-serif;
+  --ff-logo: 'Sail', sans-serif;
+  --ff-primary: 'Montserrat', sans-serif;
+  --ff-secondary: 'Dosis', sans-serif;
+  --ff-tertiary: 'Fira Sans Condensed', sans-serif;
+}
+@media (max-width: 40rem) {
+  :root {
+    --fs-xl: 1.85rem; 
+    --fs-700: 1.55rem;
+    --fs-600: 1.3rem;
+    --fs-500: 0.9rem;
+    --fs-400: 0.8rem;
+    --fs-300: 0.7rem;
+  }
 }
 
 /******************************************

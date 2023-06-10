@@ -17,6 +17,16 @@
     --ff-secondary: 'Dosis', sans-serif;
     --ff-tertiary: 'Fira Sans Condensed', sans-serif;
 }
+@media (max-width: 40rem) {
+    :root {
+      --fs-xl: 1.85rem; 
+      --fs-700: 1.55rem;
+      --fs-600: 1.3rem;
+      --fs-500: 0.9rem;
+      --fs-400: 0.8rem;
+      --fs-300: 0.7rem;
+  }
+}
 /******************************************
 /* BASE STYLES
 /*******************************************/
@@ -129,7 +139,7 @@
         display: block;
     }
     .cart-items .cartlist-container .cartlist-img {
-        width: 80%;
+        width: 4rem;
     }
     .cart-summary {
         margin-top: 2rem;
@@ -138,6 +148,4 @@
     .cart-summary .cartlist-total-price {
         margin-bottom: 0.5rem;
     }
-}
-@media (max-width: 40rem) {
 }
