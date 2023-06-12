@@ -39,16 +39,25 @@
     font-weight: bolder;
     height: 75px;
     width: 150px;
-    position: fixed;
-    bottom: 0vh;
-    right: 0vh;
     background-color: var(--clr-background-secondary);
     box-shadow: 0 0 0.438rem 0 #717171;
     border-radius: 5px;
     padding-top: 20px;
     z-index: 2;
     opacity: 0.9;
+    transition: ease-in-out 0.3s;
   }
 .success-icon {
     color: #0F834D;
+}
+
+.success.slider {
+  position: absolute;
+  bottom: 0;
+}
+
+.success.shop {
+  position: fixed;
+  right: 0;
+  bottom: 0;
 }

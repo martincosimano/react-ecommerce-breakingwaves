@@ -60,11 +60,6 @@ export default function Shop(props) {
     window.scrollTo(0, 0);
   }, [currentPage]);
 
-
-  function checkItem(item) {
-    props.checkItem(item);
-  }
-
   return (
     <main className="shop-main">
       <div className="container">
@@ -93,10 +88,10 @@ export default function Shop(props) {
                 <div className="shop-card--container">
                   {currentItems.map((item) => (
                     <Card 
+                    key={item.id}
                     item={item} 
                     isShop={true} 
-                    key={item.id}
-                    checkItem={checkItem} 
+                    checkItem={props.checkItem}
                     />
                   ))}
                 </div>

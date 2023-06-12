@@ -42,7 +42,7 @@ export default function Card(props) {
             <button className="card-cart btn-black" onClick={addToCart}>Cart</button>
           </div>
         </div>
-        {showSuccess && <Success />}
+        {showSuccess && <Success isShop={props.isShop} />}
       </div>
     </div>
   );
