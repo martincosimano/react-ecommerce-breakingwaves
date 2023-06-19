@@ -1,9 +1,15 @@
 import React from 'react';
 import CartList from '../components/shared/CartList';
 import EmptyCart from '../components/Cart/EmptyCart';
+import Modal from '../components/shared/Modal';
 import '../styles/routes/cart.css';
 
 export default function Cart(props) {
+  const [modal, setModal] = React.useState(false)
+
+  function openModal() {
+    setModal(prevModal => !prevModal)
+  }
 
     return (
         <main className="cart-main">
@@ -32,8 +38,13 @@ export default function Cart(props) {
                   <div className="cart-summary">
                     <h4 className="cart-summary-title">Order Summary ({props.cartItems.length} {props.cartItems.length > 1 ? 'Items' : 'Item'})</h4>
                     <p className="cartlist-total-price">Total: ${props.totalPrice.toFixed(2)}</p>
-                    <button className="btn-black">Proceed to Checkout</button>
+                    <button className="btn-black" onClick={openModal}>Proceed to Checkout</button>
                   </div>
+                  <Modal 
+                  modal={modal} 
+                  setModal={setModal}
+                  totalPrice={props.totalPrice.toFixed(2)}
+                  />
                 </div>) : 
                 (
                 <EmptyCart />

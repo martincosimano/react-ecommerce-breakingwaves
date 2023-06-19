@@ -1,0 +1,99 @@
+:root {
+    --clr-background-primary: #131114 ;
+    --clr-background-secondary: #fff;
+
+    --clr-font-primary: #fff;
+    --clr-font-secondary: #131114;
+
+    --fs-xl: 2rem; 
+    --fs-700: 1.75rem;
+    --fs-600: 1.5rem;
+    --fs-500: 1rem;
+    --fs-400: 0.85rem;
+    --fs-300: 0.75rem;
+
+    --ff-logo: 'Sail', sans-serif;
+    --ff-primary: 'Montserrat', sans-serif;
+    --ff-secondary: 'Dosis', sans-serif;
+    --ff-tertiary: 'Fira Sans Condensed', sans-serif;
+}
+@media (max-width: 40rem) {
+    :root {
+      --fs-xl: 1.85rem; 
+      --fs-700: 1.55rem;
+      --fs-600: 1.3rem;
+      --fs-500: 0.9rem;
+      --fs-400: 0.8rem;
+      --fs-300: 0.7rem;
+  }
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+.modal-overlay {
+    background: rgba(49,49,49,0.8);
+}
+.modal-title,
+.modal-text,
+.modal-btn {
+    color: var(--clr-font-secondary);
+    font-family: var(--ff-primary);
+}
+.modal-title {
+    font-size: var(--fs-600);
+}
+.modal-text {
+    font-size: var(--fs-500);
+}
+.modal-btn {
+    font-size: var(--fs-400);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+/******************************************
+/* LAYOUT
+/*******************************************/
+.modal, .modal-overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
+.modal-content {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: var(--clr-background-secondary);
+    padding: 0.875rem 1.75rem;
+    border-radius: 0.188rem;
+    max-width: 37.5rem;
+    min-width: 18.75rem;
+}
+.container-modal-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+.modal {
+    z-index: 100;
+}
+.modal.inactive {
+    display: none;
+}
+.btn-black.modal-btn {
+    font-family: var(--ff-secondary);
+    padding: 0.8rem 1.2rem;
+    background-color: var(--clr-background-primary);
+    color: var(--clr-font-primary);
+    border: none;
+}
