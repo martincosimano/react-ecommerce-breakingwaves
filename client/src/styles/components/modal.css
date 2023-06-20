@@ -105,3 +105,6 @@
     color: var(--clr-font-primary);
     border: none;
 }
+.error-message {
+    color: #cc0d0d;
+}

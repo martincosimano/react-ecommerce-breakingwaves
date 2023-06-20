@@ -12,10 +12,29 @@ export default function Cart(props) {
     email: "",
     city: "",
     address: ""
-  })
+  });
+  const [formSubmitted, setFormSubmitted] = React.useState(false);
 
   function openModal() {
-    setModal(prevModal => !prevModal)
+    const isFormValid = validateForm();
+    if (!isFormValid) {
+      return;
+    }
+    setModal((prevModal) => !prevModal);
+  }
+  function validateForm() {
+    const updatedFormData = {};
+
+    for (const field of Object.keys(formData)) {
+      if (!formData[field]) {
+        updatedFormData[field] = "";
+      } else {
+        updatedFormData[field] = formData[field];
+      }
+    }
+
+    setFormData(updatedFormData);
+    return Object.values(updatedFormData).every(Boolean);
   }
 
   function handleChange(event) {
@@ -24,6 +43,11 @@ export default function Cart(props) {
       ...prevFormData,
       [name]: value
     }))
+  }
+
+  function handleButtonClick() {
+    setFormSubmitted(true);
+    openModal();
   }
 
     return (
@@ -53,49 +77,68 @@ export default function Cart(props) {
                   <div className="cart-summary">
                     <h4 className="cart-summary-title">Order Summary ({props.cartItems.length} {props.cartItems.length > 1 ? 'Items' : 'Item'})</h4>
                     <form className="cart-summary-form">
-                      <input 
-                        type="text" 
-                        placeholder="First Name"
-                        name="firstName"
-                        value={formData.firstName}
-                        onChange={handleChange}
-                        >
-                      </input>
-                      <input 
-                        type="text" 
-                        placeholder="Last Name"
-                        name="lastName"
-                        value={formData.lastName}
-                        onChange={handleChange}
-                        >
-                      </input>
-                      <input 
-                        type="text" 
-                        placeholder="Email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        >
-                      </input>
-                      <input 
-                        type="text" 
-                        placeholder="City"
-                        name="city"
-                        value={formData.city}
-                        onChange={handleChange}
-                        >
-                      </input>
-                      <input 
-                        type="text" 
-                        placeholder="Address"
-                        name="address"
-                        value={formData.address}
-                        onChange={handleChange}
-                        >
-                      </input>
-                    </form>
+                    <input
+                      type="text"
+                      placeholder="First Name"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      className={!formData.firstName && formSubmitted ? "empty-field" : ""}
+                    />
+                    {!formData.firstName && formSubmitted && (
+                      <p className="error-message">Please enter your first name.</p>
+                    )}
+
+                    <input
+                      type="text"
+                      placeholder="Last Name"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      className={!formData.lastName && formSubmitted ? "empty-field" : ""}
+                    />
+                    {!formData.lastName && formSubmitted && (
+                      <p className="error-message">Please enter your last name.</p>
+                    )}
+
+                    <input
+                      type="text"
+                      placeholder="Email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className={!formData.email && formSubmitted ? "empty-field" : ""}
+                    />
+                    {!formData.email && formSubmitted && (
+                      <p className="error-message">Please enter your email address.</p>
+                    )}
+
+                    <input
+                      type="text"
+                      placeholder="City"
+                      name="city"
+                      value={formData.city}
+                      onChange={handleChange}
+                      className={!formData.city && formSubmitted ? "empty-field" : ""}
+                    />
+                    {!formData.city && formSubmitted && (
+                      <p className="error-message">Please enter your city.</p>
+                    )}
+
+                    <input
+                      type="text"
+                      placeholder="Address"
+                      name="address"
+                      value={formData.address}
+                      onChange={handleChange}
+                      className={!formData.address && formSubmitted ? "empty-field" : ""}
+                    />
+                    {!formData.address && formSubmitted && (
+                      <p className="error-message">Please enter your address.</p>
+                    )}
+                  </form>
                     <p className="cartlist-total-price">Total: ${props.totalPrice.toFixed(2)}</p>
-                    <button className="btn-black" onClick={openModal}>Proceed to Checkout</button>
+                    <button className="btn-black" onClick={handleButtonClick}>Proceed to Checkout</button>
                   </div>
                   <Modal 
                   modal={modal} 
