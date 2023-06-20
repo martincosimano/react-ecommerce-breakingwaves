@@ -6,9 +6,24 @@ import '../styles/routes/cart.css';
 
 export default function Cart(props) {
   const [modal, setModal] = React.useState(false)
+  const [formData, setFormData] = React.useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    city: "",
+    address: ""
+  })
 
   function openModal() {
     setModal(prevModal => !prevModal)
+  }
+
+  function handleChange(event) {
+    const {name, value} = event.target;
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      [name]: value
+    }))
   }
 
     return (
@@ -37,6 +52,48 @@ export default function Cart(props) {
                   </div>
                   <div className="cart-summary">
                     <h4 className="cart-summary-title">Order Summary ({props.cartItems.length} {props.cartItems.length > 1 ? 'Items' : 'Item'})</h4>
+                    <form className="cart-summary-form">
+                      <input 
+                        type="text" 
+                        placeholder="First Name"
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleChange}
+                        >
+                      </input>
+                      <input 
+                        type="text" 
+                        placeholder="Last Name"
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={handleChange}
+                        >
+                      </input>
+                      <input 
+                        type="text" 
+                        placeholder="Email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        >
+                      </input>
+                      <input 
+                        type="text" 
+                        placeholder="City"
+                        name="city"
+                        value={formData.city}
+                        onChange={handleChange}
+                        >
+                      </input>
+                      <input 
+                        type="text" 
+                        placeholder="Address"
+                        name="address"
+                        value={formData.address}
+                        onChange={handleChange}
+                        >
+                      </input>
+                    </form>
                     <p className="cartlist-total-price">Total: ${props.totalPrice.toFixed(2)}</p>
                     <button className="btn-black" onClick={openModal}>Proceed to Checkout</button>
                   </div>
@@ -44,6 +101,11 @@ export default function Cart(props) {
                   modal={modal} 
                   setModal={setModal}
                   totalPrice={props.totalPrice.toFixed(2)}
+                  firstName={formData.firstName}
+                  lastName={formData.lastName}
+                  email={formData.email}
+                  city={formData.city}
+                  address={formData.address}
                   />
                 </div>) : 
                 (
