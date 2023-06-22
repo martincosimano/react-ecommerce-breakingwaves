@@ -168,10 +168,10 @@
     .nav-info {
         align-items: center;
         flex-direction: column;
+        padding-block: 1rem;
     }
     .nav-info--item {
         min-width: 14.875rem;
-        padding-top: 0.5rem;
     }
     .footer-form--input {
         width: 19rem;
