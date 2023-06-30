@@ -23,7 +23,6 @@ function useLocalStorage(key, initialValue) {
 }
 
 export default function App() {
-
   const [cartItems, setCartItems] = useLocalStorage('cartItems', []);
 
   function checkItem(item) {
@@ -31,7 +30,7 @@ export default function App() {
   }
 
   const groupedItems = React.useMemo(() => {
-    return cartItems.reduce((acc, item) => {
+    const itemCounts = cartItems.reduce((acc, item) => {
       if (acc[item.productName]) {
         acc[item.productName].count += 1;
       } else {
@@ -45,6 +44,8 @@ export default function App() {
       }
       return acc;
     }, {});
+
+    return itemCounts;
   }, [cartItems]);
 
   const totalPrice = Object.values(groupedItems).reduce(
@@ -53,7 +54,9 @@ export default function App() {
   );
 
   function removeFromCart(itemName) {
-    const itemIndex = cartItems.findIndex((item) => item.productName === itemName);
+    const itemIndex = cartItems.findIndex(
+      (item) => item.productName === itemName
+    );
     if (itemIndex !== -1) {
       const updatedCartItems = [...cartItems];
       updatedCartItems.splice(itemIndex, 1);
@@ -67,16 +70,19 @@ export default function App() {
       productName: item.productName,
       productPrice: item.productPrice,
       productImage: item.productImage,
-  };
+    };
 
-  setCartItems((prevCartItems) => [...prevCartItems, updatedItem]);
-}
-
-
+    setCartItems((prevCartItems) => [...prevCartItems, updatedItem]);
+  }
 
   return (
     <BrowserRouter>
-      <Header cartItems={cartItems} groupedItems={groupedItems} totalPrice={totalPrice} removeFromCart={removeFromCart} />
+      <Header
+        cartItems={cartItems}
+        groupedItems={groupedItems}
+        totalPrice={totalPrice}
+        removeFromCart={removeFromCart}
+      />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home checkItem={checkItem} />} />
@@ -85,14 +91,18 @@ export default function App() {
           path="/shop/:category?"
           element={<Shop checkItem={checkItem} />}
         />
-        <Route path="/cart" element={<Cart 
-        cartItems={cartItems} 
-        groupedItems={groupedItems} 
-        totalPrice={totalPrice} 
-        removeFromCart={removeFromCart}
-        sumToCart={sumToCart}
-        setCartItems={setCartItems}
-          />}
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              cartItems={cartItems}
+              groupedItems={groupedItems}
+              totalPrice={totalPrice}
+              removeFromCart={removeFromCart}
+              sumToCart={sumToCart}
+              setCartItems={setCartItems}
+            />
+          }
         />
       </Routes>
       <PreFooter />

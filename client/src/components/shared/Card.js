@@ -20,7 +20,7 @@ export default function Card(props) {
     setShowSuccess(true);
     setTimeout(() => {
       setShowSuccess(false);
-    }, 3000);
+    }, 1000);
   }
   
   return (

@@ -115,6 +115,7 @@
     justify-content: space-between;
     align-items: center;
     min-height: 10rem;
+    max-height: 33.5rem;
     border: 0.1rem solid #b1b1b1;
     padding: 1rem;
     margin-inline: 1rem;

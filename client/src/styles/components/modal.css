@@ -1,5 +1,5 @@
 :root {
-    --clr-background-primary: #131114 ;
+    --clr-background-primary: #131114;
     --clr-background-secondary: #fff;
 
     --clr-font-primary: #fff;
@@ -43,6 +43,7 @@
 }
 .modal-title {
     font-size: var(--fs-600);
+    text-align: center;
 }
 .modal-text,
 .modal-content p {
@@ -52,6 +53,10 @@
     font-size: var(--fs-400);
     text-transform: uppercase;
     font-weight: bold;
+}
+.modal-icon {
+    color: #0F834D;
+    font-size: 5rem;
 }
 /******************************************
 /* LAYOUT
@@ -67,20 +72,19 @@
 }
 .modal-content {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     line-height: 1.4;
     background: var(--clr-background-secondary);
     padding: 0.875rem 1.75rem;
     border-radius: 0.188rem;
-    max-width: 37.5rem;
-    min-width: 18.75rem;
+    min-width: 25rem;
 }
 .container-modal-btn {
     display: flex;
     justify-content: center;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     margin-bottom: 0.5rem;
 }
 .modal-content-text {
@@ -88,6 +92,14 @@
 }
 .modal-content-text * {
     padding-block: 0.2rem;
+}
+.modal-price-container {
+    padding-top: 1.5rem;
+}
+.modal-icon-container {
+    display: flex;
+    justify-content: center;
+    margin-block: 1.5rem;
 }
 /******************************************
 /* ADDITIONAL STYLES
@@ -107,4 +119,22 @@
 }
 .error-message {
     color: #cc0d0d;
+}
+.modal-price {
+    background-color: #DCDCDC;
+    text-align: center;
+    font-weight: bold;
+}
+.modal-content-text span {
+    font-weight: bold;
+}
+
+/******************************************
+/* MEDIA QUERY
+/*******************************************/
+
+@media (max-width: 31rem) {
+    .modal-content {
+        min-width: 85%;
+    }
 }

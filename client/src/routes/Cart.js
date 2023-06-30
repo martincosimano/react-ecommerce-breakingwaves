@@ -74,6 +74,7 @@ export default function Cart(props) {
                     />
                     ))}
                   </div>
+                  
                   <div className="cart-summary">
                     <h4 className="cart-summary-title">Order Summary ({props.cartItems.length} {props.cartItems.length > 1 ? 'Items' : 'Item'})</h4>
                     <form className="cart-summary-form">

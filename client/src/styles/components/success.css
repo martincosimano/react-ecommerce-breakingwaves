@@ -37,12 +37,11 @@
     font-size: var(--fs-400);
     color: var(--clr-font-secondary);
     font-weight: bolder;
-    height: 75px;
-    width: 150px;
+    height: 4.688rem;
+    width: 9.375rem;
     background-color: var(--clr-background-secondary);
     box-shadow: 0 0 0.438rem 0 #717171;
-    border-radius: 5px;
-    padding-top: 20px;
+    border-radius: 0.313rem;
     z-index: 2;
     opacity: 0.9;
     transition: ease-in-out 0.3s;
@@ -51,11 +50,23 @@
     color: #0F834D;
 }
 
+/******************************************
+/* LAYOUT
+/*******************************************/
+.success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.1rem;
+}
+.success-icon {
+  width: 17px;
+  height: 15px;
+}
 .success.slider {
   position: absolute;
   bottom: 0;
 }
-
 .success.shop {
   position: fixed;
   right: 0;
