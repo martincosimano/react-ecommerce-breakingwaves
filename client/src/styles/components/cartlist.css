@@ -45,7 +45,7 @@
 /* LAYOUT
 /*******************************************/
 .cartlist-menu {
-    height: 95vh;
+    max-height: 95vh;
 }
 .cartlist-container {
     display: flex;
