@@ -54,7 +54,7 @@ export default function Carousel(props) {
               key={item.id} 
               item={item}
               isShop={false}
-              checkItem={props.checkItem} 
+              addToCart={props.addToCart} 
               />
           ))}
         </Slider>

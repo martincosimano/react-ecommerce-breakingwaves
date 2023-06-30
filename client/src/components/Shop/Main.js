@@ -91,7 +91,7 @@ export default function Shop(props) {
                     key={item.id}
                     item={item} 
                     isShop={true} 
-                    checkItem={props.checkItem}
+                    addToCart={props.addToCart}
                     />
                   ))}
                 </div>

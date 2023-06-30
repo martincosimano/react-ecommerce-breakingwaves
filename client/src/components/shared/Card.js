@@ -16,7 +16,7 @@ export default function Card(props) {
   };
 
   function addToCart() {
-    props.checkItem(props.item);
+    props.addToCart(props.item);
     setShowSuccess(true);
     setTimeout(() => {
       setShowSuccess(false);

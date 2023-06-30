@@ -25,7 +25,7 @@ function useLocalStorage(key, initialValue) {
 export default function App() {
   const [cartItems, setCartItems] = useLocalStorage('cartItems', []);
 
-  function checkItem(item) {
+  function addToCart(item) {
     setCartItems((prevCartItems) => [...prevCartItems, item]);
   }
 
@@ -54,9 +54,10 @@ export default function App() {
   );
 
   function removeFromCart(itemName) {
-    const itemIndex = cartItems.findIndex(
-      (item) => item.productName === itemName
-    );
+    const itemIndex = cartItems
+      .map((item) => item.productName)
+      .lastIndexOf(itemName);
+  
     if (itemIndex !== -1) {
       const updatedCartItems = [...cartItems];
       updatedCartItems.splice(itemIndex, 1);
@@ -85,11 +86,11 @@ export default function App() {
       />
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<Home checkItem={checkItem} />} />
+        <Route path="/" element={<Home addToCart={addToCart} />} />
         <Route path="/about" element={<About />} />
         <Route
           path="/shop/:category?"
-          element={<Shop checkItem={checkItem} />}
+          element={<Shop addToCart={addToCart} />}
         />
         <Route
           path="/cart"

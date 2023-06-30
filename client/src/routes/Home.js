@@ -9,7 +9,7 @@ export default function Home(props) {
     return (
         <div>
             <Main />
-            <Carousel checkItem={props.checkItem} />
+            <Carousel addToCart={props.addToCart} />
             <AboutSection />
         </div>
     )

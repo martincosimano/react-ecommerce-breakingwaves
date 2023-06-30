@@ -5,7 +5,6 @@ export const productsData = [
       productPrice: '33.99',
       productImage: 'https://res.cloudinary.com/dx5ndnahy/image/upload/v1680029974/product-3_dzivs4.png',
       productCategory: 't-shirts',
-      productQuantity: '',
     },
     {
       id: 2,
@@ -13,7 +12,6 @@ export const productsData = [
       productPrice: '32.99',
       productImage: 'https://res.cloudinary.com/dx5ndnahy/image/upload/v1680029974/product-2_qwlqhp.png',
       productCategory: 'hoodies-&-jackets',
-      productQuantity: '',
     },
     {
       id: 3,
@@ -21,7 +19,6 @@ export const productsData = [
       productPrice: '35.00',
       productImage: 'https://res.cloudinary.com/dx5ndnahy/image/upload/v1680029974/product-1_pbltho.png',
       productCategory: 't-shirts',
-      productQuantity: '',
     },
     {
       id: 4,
@@ -29,7 +26,6 @@ export const productsData = [
       productPrice: '46.00',
       productImage: 'https://res.cloudinary.com/dx5ndnahy/image/upload/v1680029974/product-4_pzwgqa.png',
       productCategory: 'hoodies-&-jackets',
-      productQuantity: '',
     },
     {
       id: 5,
@@ -37,7 +33,6 @@ export const productsData = [
       productPrice: '49.00',
       productImage: 'https://res.cloudinary.com/dx5ndnahy/image/upload/v1680029974/product-5_bk9wnm.png',
       productCategory: 'pants-&-sweatpants',
-      productQuantity: '',
     },
     {
       id: 6,
@@ -45,7 +40,6 @@ export const productsData = [
       productPrice: '59.99',
       productImage: 'https://res.cloudinary.com/dx5ndnahy/image/upload/v1680029974/product-6_pdvmve.png',
       productCategory: 'skateboarding',
-      productQuantity: '',
     },
     {
       id: 7,
@@ -53,7 +47,6 @@ export const productsData = [
       productPrice: '64.00',
       productImage: 'https://res.cloudinary.com/dx5ndnahy/image/upload/v1680029975/product-7_cshg6d.png',
       productCategory: 'skateboarding',
-      productQuantity: '',
     },
     {
       id: 8,
@@ -61,7 +54,6 @@ export const productsData = [
       productPrice: '73.99',
       productImage: 'https://res.cloudinary.com/dx5ndnahy/image/upload/v1680029975/product-8_aajq6e.png',
       productCategory: 'skateboarding',
-      productQuantity: '',
     },
     {
       id: 9,
@@ -69,7 +61,6 @@ export const productsData = [
       productPrice: '67.99',
       productImage: 'https://res.cloudinary.com/dx5ndnahy/image/upload/v1680029975/product-9_cu6p0l.png',
       productCategory: 'skateboarding',
-      productQuantity: '',
     },
     {
     id: 10,
@@ -77,7 +68,6 @@ export const productsData = [
     productPrice: '28.00',
     productImage: 'https://res.cloudinary.com/dx5ndnahy/image/upload/v1685925268/product-10_b9zqtv.png',
     productCategory: 'accesories',
-    productQuantity: '',
   },
   {
     id: 11,
@@ -85,7 +75,6 @@ export const productsData = [
     productPrice: '23.00',
     productImage: 'https://res.cloudinary.com/dx5ndnahy/image/upload/v1685925268/product-11_fas6wy.png',
     productCategory: 'accesories',
-    productQuantity: '',
   },
   {
     id: 12,
@@ -93,7 +82,6 @@ export const productsData = [
     productPrice: '31.00',
     productImage: 'https://res.cloudinary.com/dx5ndnahy/image/upload/v1685925268/product-12_ammrl5.png',
     productCategory: 'accesories',
-    productQuantity: '',
   },
   {
     id: 13,
@@ -101,7 +89,6 @@ export const productsData = [
     productPrice: '57.00',
     productImage: 'https://res.cloudinary.com/dx5ndnahy/image/upload/v1685925269/product-13_qocray.png',
     productCategory: 'pants-&-sweatpants',
-    productQuantity: '',
   },
   {
     id: 14,
@@ -109,7 +96,6 @@ export const productsData = [
     productPrice: '72.00',
     productImage: 'https://res.cloudinary.com/dx5ndnahy/image/upload/v1685931905/product-14_itp6la.png',
     productCategory: 'hoodies-&-jackets',
-    productQuantity: '',
   },
   {
     id: 15,
@@ -117,7 +103,6 @@ export const productsData = [
     productPrice: '70.00',
     productImage: 'https://res.cloudinary.com/dx5ndnahy/image/upload/v1685925268/product-15_yw3czb.png',
     productCategory: 'hoodies-&-jackets',
-    productQuantity: '',
   },
   {
     id: 16,
@@ -125,7 +110,6 @@ export const productsData = [
     productPrice: '78.00',
     productImage: 'https://res.cloudinary.com/dx5ndnahy/image/upload/v1685925269/product-16_maxn1t.png',
     productCategory: 'hoodies-&-jackets',
-    productQuantity: '',
   },
   {
     id: 17,
@@ -133,7 +117,6 @@ export const productsData = [
     productPrice: '75.00',
     productImage: 'https://res.cloudinary.com/dx5ndnahy/image/upload/v1685925269/product-17_f3vpev.png',
     productCategory: 'hoodies-&-jackets',
-    productQuantity: '',
   },
   {
     id: 18,
@@ -141,7 +124,6 @@ export const productsData = [
     productPrice: '43.00',
     productImage: 'https://res.cloudinary.com/dx5ndnahy/image/upload/v1685925269/product-18_fjwniq.png',
     productCategory: 't-shirts',
-    productQuantity: '',
   },
   {
     id: 19,
@@ -149,6 +131,5 @@ export const productsData = [
     productPrice: '41.00',
     productImage: 'https://res.cloudinary.com/dx5ndnahy/image/upload/v1685925269/product-19_snqe79.png',
     productCategory: 't-shirts',
-    productQuantity: '',
   },
   ];
