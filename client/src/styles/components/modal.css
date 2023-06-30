@@ -118,6 +118,10 @@
     border: none;
 }
 .error-message {
+    font-family: var(--ff-primary);
+    font-size: var(--fs-400);
+    font-weight: bold;
+    padding-bottom: 1.25rem;
     color: #cc0d0d;
 }
 .modal-price {

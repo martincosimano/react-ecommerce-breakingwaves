@@ -44,9 +44,6 @@
 /******************************************
 /* LAYOUT
 /*******************************************/
-.cartlist-menu {
-    max-height: 95vh;
-}
 .cartlist-container {
     display: flex;
     padding-block: 0.5rem;
@@ -54,6 +51,7 @@
     align-items: flex-start;
     justify-content: space-between;
     min-height: 6rem;
+    margin-top: 1rem;
 }
 .cartlist-img {
     width: 3rem;
@@ -79,6 +77,7 @@
     background-color: var(--clr-background-primary);
     padding: 0.625rem 0.3rem;
     min-width: 15rem;
+    max-height: 58vh;
 }
 /******************************************
 /* ADITIONAL STYLES

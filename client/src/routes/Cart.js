@@ -78,7 +78,9 @@ export default function Cart(props) {
                   <div className="cart-summary">
                     <h4 className="cart-summary-title">Order Summary ({props.cartItems.length} {props.cartItems.length > 1 ? 'Items' : 'Item'})</h4>
                     <form className="cart-summary-form">
+                    <label className="cart-form-label" for="firstName">First name *</label>
                     <input
+                      id="firstName"
                       type="text"
                       placeholder="First Name"
                       name="firstName"
@@ -87,10 +89,11 @@ export default function Cart(props) {
                       className={!formData.firstName && formSubmitted ? "empty-field" : ""}
                     />
                     {!formData.firstName && formSubmitted && (
-                      <p className="error-message">Please enter your first name.</p>
+                      <p className="error-message">First name is required.</p>
                     )}
-
+                    <label className="cart-form-label" for="lastName">Last name *</label>
                     <input
+                      id="lastName"
                       type="text"
                       placeholder="Last Name"
                       name="lastName"
@@ -99,11 +102,13 @@ export default function Cart(props) {
                       className={!formData.lastName && formSubmitted ? "empty-field" : ""}
                     />
                     {!formData.lastName && formSubmitted && (
-                      <p className="error-message">Please enter your last name.</p>
+                      <p className="error-message">Last name is required.</p>
                     )}
 
+                    <label className="cart-form-label" for="email">Email *</label>
                     <input
-                      type="text"
+                      id="email"
+                      type="email"
                       placeholder="Email"
                       name="email"
                       value={formData.email}
@@ -111,10 +116,11 @@ export default function Cart(props) {
                       className={!formData.email && formSubmitted ? "empty-field" : ""}
                     />
                     {!formData.email && formSubmitted && (
-                      <p className="error-message">Please enter your email address.</p>
+                      <p className="error-message">Email address is required.</p>
                     )}
-
+                    <label className="cart-form-label" for="city">City *</label>
                     <input
+                      id="city"
                       type="text"
                       placeholder="City"
                       name="city"
@@ -123,10 +129,11 @@ export default function Cart(props) {
                       className={!formData.city && formSubmitted ? "empty-field" : ""}
                     />
                     {!formData.city && formSubmitted && (
-                      <p className="error-message">Please enter your city.</p>
+                      <p className="error-message">City is required.</p>
                     )}
-
+                    <label className="cart-form-label" for="address">Address *</label>
                     <input
+                      id="address"
                       type="text"
                       placeholder="Address"
                       name="address"
@@ -135,7 +142,7 @@ export default function Cart(props) {
                       className={!formData.address && formSubmitted ? "empty-field" : ""}
                     />
                     {!formData.address && formSubmitted && (
-                      <p className="error-message">Please enter your address.</p>
+                      <p className="error-message">Address is required.</p>
                     )}
                   </form>
                     <p className="cartlist-total-price">Total: ${props.totalPrice.toFixed(2)}</p>
