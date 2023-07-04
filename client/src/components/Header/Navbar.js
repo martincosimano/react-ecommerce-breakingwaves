@@ -103,6 +103,10 @@ export default function Navbar(props) {
                 categories={navSidebarData}
                 isNav={true}
                 cartItems={props.cartItems.length}
+                loginWithGoogle={props.loginWithGoogle}
+                logOffWithGoogle={props.logOffWithGoogle}
+                userName={props.userName}
+                auth={props.auth}
               />
             </div>
           )}
