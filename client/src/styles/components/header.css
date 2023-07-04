@@ -49,6 +49,7 @@ header {
     text-transform: uppercase;
     font-weight: 600;
     opacity: 0.9;
+    cursor: pointer;
 }
 .sidebar-title.sidebar-nav {
     color: var(--clr-font-primary);
@@ -90,6 +91,7 @@ header {
     gap: 1.5rem;
     align-items: center;
     padding-block: 0.9rem;
+    margin-right: 4rem;
 }
 .logo-hold {
     padding-bottom: 0.15rem;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
+import "./config/firebase-config"
 import App from './App';
 import './styles/index.css';
 

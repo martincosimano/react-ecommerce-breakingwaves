@@ -75,7 +75,7 @@ export default function Navbar(props) {
                   </div>
                   <ul className="nav-ul">
                     <li>
-                      <a href="" className="nav-anchor">Log In/Register</a>
+                      <span href="" className="nav-anchor" onClick={!props.auth ? props.loginWithGoogle : props.logOffWithGoogle}>{props.auth ? `Log Out, ${props.userName.split(' ')[0]}` : 'Log In'}</span>
                     </li>
                     <li>
                       <Link to="/cart" className="nav-cart nav-anchor"><FaIcons.FaShoppingCart/></Link>

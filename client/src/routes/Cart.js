@@ -78,7 +78,7 @@ export default function Cart(props) {
                   <div className="cart-summary">
                     <h4 className="cart-summary-title">Order Summary ({props.cartItems.length} {props.cartItems.length > 1 ? 'Items' : 'Item'})</h4>
                     <form className="cart-summary-form">
-                    <label className="cart-form-label" for="firstName">First name *</label>
+                    <label className="cart-form-label" htmlFor="firstName">First name *</label>
                     <input
                       id="firstName"
                       type="text"
@@ -91,7 +91,7 @@ export default function Cart(props) {
                     {!formData.firstName && formSubmitted && (
                       <p className="error-message">First name is required.</p>
                     )}
-                    <label className="cart-form-label" for="lastName">Last name *</label>
+                    <label className="cart-form-label" htmlFor="lastName">Last name *</label>
                     <input
                       id="lastName"
                       type="text"
@@ -105,7 +105,7 @@ export default function Cart(props) {
                       <p className="error-message">Last name is required.</p>
                     )}
 
-                    <label className="cart-form-label" for="email">Email *</label>
+                    <label className="cart-form-label" htmlFor="email">Email *</label>
                     <input
                       id="email"
                       type="email"
@@ -118,7 +118,7 @@ export default function Cart(props) {
                     {!formData.email && formSubmitted && (
                       <p className="error-message">Email address is required.</p>
                     )}
-                    <label className="cart-form-label" for="city">City *</label>
+                    <label className="cart-form-label" htmlFor="city">City *</label>
                     <input
                       id="city"
                       type="text"
@@ -131,7 +131,7 @@ export default function Cart(props) {
                     {!formData.city && formSubmitted && (
                       <p className="error-message">City is required.</p>
                     )}
-                    <label className="cart-form-label" for="address">Address *</label>
+                    <label className="cart-form-label" htmlFor="address">Address *</label>
                     <input
                       id="address"
                       type="text"
