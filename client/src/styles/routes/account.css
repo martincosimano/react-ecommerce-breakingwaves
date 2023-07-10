@@ -104,11 +104,12 @@ button.account-btn {
 @media(max-width: 40rem) {
     .account-container {
         flex-direction: column;
+        width: 90%;
     }
     .login-container,
     .registration-container {
         margin-inline: auto;
-        width: 80%;
+        width: 100%;
         padding-inline: 0rem;
     }
     .registration-container {
@@ -118,5 +119,8 @@ button.account-btn {
     }
     .login-container {
         border-right: none;
+    }
+    .account-title {
+        text-align: center;
     }
 }
