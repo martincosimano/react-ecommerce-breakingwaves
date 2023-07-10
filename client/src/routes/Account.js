@@ -23,7 +23,9 @@ export default function Account() {
                             type="text"
                             placeholder="Password"
                         />
-                        <button className="btn-black account-btn">Log In</button>                        
+                        <div className="account-btn-container">
+                            <button className="btn-black account-btn">Log In</button>
+                        </div>                     
                         </form>
                     </div>
                 </div>
@@ -69,7 +71,9 @@ export default function Account() {
                             type="text"
                             placeholder="Confirm Password"
                         />
-                        <button className="btn-black account-btn">Register</button>                        
+                        <div className="account-btn-container">
+                            <button className="btn-black account-btn">Register</button>
+                        </div>                    
                         </form>
                     </div>                    
                 </div>

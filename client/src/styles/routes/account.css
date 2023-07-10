@@ -83,6 +83,10 @@
 button.account-btn {
     margin-top: 1.5rem;
     font-size: var(--fs-500);
+}
+.account-btn-container {
+    display: flex;
+    justify-content: center;
     text-align: center;
 }
 .login-container {
