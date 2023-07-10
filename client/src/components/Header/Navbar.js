@@ -75,7 +75,7 @@ export default function Navbar(props) {
                   </div>
                   <ul className="nav-ul">
                     <li>
-                      <span href="" className="nav-anchor" onClick={!props.auth ? props.loginWithGoogle : props.logOffWithGoogle}>{props.auth ? `Log Out, ${props.userName.split(' ')[0]}` : 'Log In'}</span>
+                      <Link to="/account" className="nav-anchor">Log In/Register</Link>
                     </li>
                     <li>
                       <Link to="/cart" className="nav-cart nav-anchor"><FaIcons.FaShoppingCart/></Link>
@@ -103,10 +103,6 @@ export default function Navbar(props) {
                 categories={navSidebarData}
                 isNav={true}
                 cartItems={props.cartItems.length}
-                loginWithGoogle={props.loginWithGoogle}
-                logOffWithGoogle={props.logOffWithGoogle}
-                userName={props.userName}
-                auth={props.auth}
               />
             </div>
           )}

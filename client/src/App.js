@@ -1,7 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
 import ScrollToTop from './components/shared/ScrollToTop';
 import Header from './components/Header/Header';
 import Home from './routes/Home';
@@ -10,6 +8,7 @@ import PreFooter from './components/Footer/PreFooter';
 import Footer from './components/Footer/Footer';
 import Shop from './routes/Shop';
 import Cart from './routes/Cart';
+import Account from './routes/Account';
 
 
 // Cart functionality
@@ -81,68 +80,6 @@ export default function App() {
   }
   
 
-// Login functionality
-const [auth, setAuth] = React.useState(() => {
-  const storedAuth = window.localStorage.getItem("auth");
-  return storedAuth === "true";
-});
-const [token, setToken] = React.useState("");
-const [userName, setuserName] = React.useState("");
-
-const [popupOpen, setPopupOpen] = React.useState(false);
-
-React.useEffect(() => {
-  firebase.auth().onAuthStateChanged((userCred) => {
-    if (userCred) {
-      setAuth(true);
-      window.localStorage.setItem("auth", "true");
-      setuserName(userCred.displayName);
-      userCred.getIdToken().then((token) => {
-        setToken(token);
-      });
-    } else {
-      setAuth(false);
-      window.localStorage.setItem("auth", "false");
-      setuserName("");
-      if (popupOpen) {
-        setPopupOpen(false);
-      }
-    }
-  });
-}, [popupOpen]);
-
-function loginWithGoogle() {
-  if (!popupOpen) {
-    setPopupOpen(true);
-    firebase
-      .auth()
-      .signInWithPopup(new firebase.auth.GoogleAuthProvider())
-      .then((userCred) => {
-        if (userCred) {
-          setAuth(true);
-          window.localStorage.setItem("auth", "true");
-          setuserName(userCred.user.displayName);
-        }
-        setPopupOpen(false);
-      })
-      .catch((error) => {
-        setPopupOpen(false);
-        console.log(error);
-      });
-  }
-}
-
-function logOffWithGoogle() {
-  firebase
-    .auth()
-    .signOut()
-    .then(() => {
-      setAuth(false);
-      window.localStorage.setItem("auth", "false");
-      setuserName("");
-    });
-}
-
   return (
     <BrowserRouter>
       <Header
@@ -150,10 +87,6 @@ function logOffWithGoogle() {
         groupedItems={groupedItems}
         totalPrice={totalPrice}
         removeFromCart={removeFromCart}
-        loginWithGoogle={loginWithGoogle}
-        logOffWithGoogle={logOffWithGoogle}
-        userName={userName}
-        auth={auth}
       />
       <ScrollToTop />
       <Routes>
@@ -176,6 +109,7 @@ function logOffWithGoogle() {
             />
           }
         />
+        <Route path="/account" element={<Account />} />
       </Routes>
       <PreFooter />
       <Footer />

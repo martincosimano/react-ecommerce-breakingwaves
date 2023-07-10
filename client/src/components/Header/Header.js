@@ -11,10 +11,6 @@ export default function Header(props) {
                 groupedItems={props.groupedItems} 
                 totalPrice={props.totalPrice} 
                 removeFromCart={props.removeFromCart}
-                loginWithGoogle={props.loginWithGoogle}
-                logOffWithGoogle={props.logOffWithGoogle}
-                userName={props.userName}
-                auth={props.auth}
             />
         </div>
     </header>

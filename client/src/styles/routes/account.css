@@ -1,0 +1,122 @@
+:root {
+    --clr-background-primary: #131114 ;
+    --clr-background-secondary: #fff;
+
+    --clr-font-primary: #fff;
+    --clr-font-secondary: #131114;
+
+    --fs-xl: 2rem; 
+    --fs-700: 1.75rem;
+    --fs-600: 1.5rem;
+    --fs-500: 1rem;
+    --fs-400: 0.85rem;
+    --fs-300: 0.75rem;
+
+    --ff-logo: 'Sail', sans-serif;
+    --ff-primary: 'Montserrat', sans-serif;
+    --ff-secondary: 'Dosis', sans-serif;
+    --ff-tertiary: 'Fira Sans Condensed', sans-serif;
+}
+@media (max-width: 40rem) {
+    :root {
+      --fs-xl: 1.85rem; 
+      --fs-700: 1.55rem;
+      --fs-600: 1.3rem;
+      --fs-500: 0.9rem;
+      --fs-400: 0.8rem;
+      --fs-300: 0.7rem;
+  }
+}
+/******************************************
+/* BASE STYLES
+/*******************************************/
+.account-title,
+.account-label,
+.account-input {
+    color: var(--clr-font-secondary);
+    font-size: var(--fs-500);
+    font-family: var(--ff-primary);
+}
+.account-title {
+    font-size: var(--fs-600);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+/******************************************
+/* LAYOUT
+/*******************************************/
+.account-main {
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+}
+.account-container {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    width: 80%;
+    margin-inline: auto;
+    padding: 2rem 0.5rem;
+}
+.login-container *,
+.registration-container *{
+    display: flex;
+    flex-direction: column;
+}
+.login-container,
+.registration-container {
+    width: 40%;
+    padding-inline: 1rem;
+}
+.account-input {
+    margin-block: 0.5rem;
+    height: 2.25rem;
+    width: 100%;
+    padding-inline: 0.5rem;
+}
+.account-title {
+    margin-bottom: 1rem;
+}
+/******************************************
+/* ADITIONAL STYLES
+/*******************************************/
+button.account-btn {
+    margin-top: 1.5rem;
+    font-size: var(--fs-500);
+}
+.login-container {
+    width: 50%;
+    padding-right: 5rem;
+    border-right: 1px solid #ececec;
+}
+/******************************************
+/* MEDIA QUERY
+/*******************************************/
+@media(max-width: 62rem) {
+    .login-container,
+    .registration-container {
+    padding-inline: 0rem;
+}
+    .login-container {
+        padding-right: 4rem;
+    }
+}
+@media(max-width: 40rem) {
+    .account-container {
+        flex-direction: column;
+    }
+    .login-container,
+    .registration-container {
+        margin-inline: auto;
+        width: 80%;
+        padding-inline: 0rem;
+    }
+    .registration-container {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid #ececec;
+    }
+    .login-container {
+        border-right: none;
+    }
+}
