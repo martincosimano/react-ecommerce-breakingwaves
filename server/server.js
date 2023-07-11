@@ -1,20 +1,18 @@
 const express = require("express");
-const dotenv = require("dotenv");
+const path = require("path");
+const dotenv = require('dotenv').config();
 const bodyParser = require("body-parser");
-const cors = require('cors');
 const connectDB = require('./config/db');
-
-dotenv.config( { path: "./config/config.env"});
+const PORT = process.env.PORT || 8000;
 
 connectDB();
 
 const app = express();
 
-app.use(bodyParser.json());
-app.use(cors({
-  origin: '*'
-}));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
-const PORT = process.env.PORT || 8000;
+
+app.use('/api/users', require('./routes/userRoutes'));
 
 app.listen(PORT, () => `Server running on port ${PORT}`);

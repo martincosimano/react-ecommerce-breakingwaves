@@ -132,4 +132,4 @@ export const productsData = [
     productImage: 'https://res.cloudinary.com/dx5ndnahy/image/upload/v1685925269/product-19_snqe79.png',
     productCategory: 't-shirts',
   },
-  ];
+];
