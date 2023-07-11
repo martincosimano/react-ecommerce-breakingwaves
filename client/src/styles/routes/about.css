@@ -131,7 +131,7 @@
         align-items: center !important;
     }
 }
-@media (max-width: 40rem) {
+@media (max-width: 48.125rem) {
     .about-main--section {
         margin-top: 4rem;
     }

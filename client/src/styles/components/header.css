@@ -139,7 +139,7 @@ header {
     }
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 48.125rem) {
     .navbar {
         display: flex;
         align-items: center;

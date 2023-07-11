@@ -163,7 +163,7 @@
         width: 50%;
     }
 }
-@media (max-width: 40rem) {
+@media (max-width: 48.125rem) {
     .shop-card {
         width: 100%;
     }

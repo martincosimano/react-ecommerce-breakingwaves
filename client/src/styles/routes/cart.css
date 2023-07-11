@@ -177,7 +177,7 @@
         min-width: 25rem;
     }
 }
-@media (max-width: 40rem) {
+@media (max-width: 48.125rem) {
     .cart-summary-form input {
         min-width: 18rem;
     }

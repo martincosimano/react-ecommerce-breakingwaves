@@ -27,7 +27,7 @@ export default function Navbar(props) {
   
     return (
         <IconContext.Provider value={{ color: "white" }}>
-          {windowWidth > 640 ? (
+          {windowWidth > 770 ? (
             // Display full navigation for wider screens
             <div className="nav-container">
               <div className="logo-container">
