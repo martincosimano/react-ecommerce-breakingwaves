@@ -27,7 +27,7 @@ export const navSidebarData = [
   },
   {
     id:4,
-    title: "Account",
+    title: "Log In/Register",
     path: "/account",
     icon: <FaIcons.FaUser />,
     cName: "sidebar-nav",
