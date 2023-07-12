@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ScrollToTop from './components/shared/ScrollToTop';
 import Header from './components/Header/Header';
 import Home from './routes/Home';
@@ -81,38 +81,40 @@ export default function App() {
   
 
   return (
-    <BrowserRouter>
-      <Header
-        cartItems={cartItems}
-        groupedItems={groupedItems}
-        totalPrice={totalPrice}
-        removeFromCart={removeFromCart}
-      />
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Home addToCart={addToCart} />} />
-        <Route path="/about" element={<About />} />
-        <Route
-          path="/shop/:category?"
-          element={<Shop addToCart={addToCart} />}
+    <>
+      <Router>
+        <Header
+          cartItems={cartItems}
+          groupedItems={groupedItems}
+          totalPrice={totalPrice}
+          removeFromCart={removeFromCart}
         />
-        <Route
-          path="/cart"
-          element={
-            <Cart
-              cartItems={cartItems}
-              groupedItems={groupedItems}
-              totalPrice={totalPrice}
-              removeFromCart={removeFromCart}
-              sumToCart={sumToCart}
-              setCartItems={setCartItems}
-            />
-          }
-        />
-        <Route path="/account" element={<Account />} />
-      </Routes>
-      <PreFooter />
-      <Footer />
-    </BrowserRouter>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Home addToCart={addToCart} />} />
+          <Route path="/about" element={<About />} />
+          <Route
+            path="/shop/:category?"
+            element={<Shop addToCart={addToCart} />}
+          />
+          <Route
+            path="/cart"
+            element={
+              <Cart
+                cartItems={cartItems}
+                groupedItems={groupedItems}
+                totalPrice={totalPrice}
+                removeFromCart={removeFromCart}
+                sumToCart={sumToCart}
+                setCartItems={setCartItems}
+              />
+            }
+          />
+          <Route path="/account" element={<Account />} />
+        </Routes>
+        <PreFooter />
+        <Footer />
+      </Router>
+    </>
   );
 }
