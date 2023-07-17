@@ -36,7 +36,7 @@ export default function Register() {
                 password
             }
             try {
-                const response = await axios.post('/api/users', userData);
+                const response = await axios.post('https://breakingwaves.onrender.com/api/users', userData);
                 console.log(response.data);
               } catch (error) {
                 console.error(error);

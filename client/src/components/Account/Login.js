@@ -28,7 +28,7 @@ export default function Login(props) {
         };
       
         try {
-            const response = await axios.post('/api/users/login', userData);
+            const response = await axios.post('https://breakingwaves.onrender.com/api/users/login', userData);
             if (response.data) {
               localStorage.setItem('user', JSON.stringify(response.data));
               props.setIsLogged(true);
