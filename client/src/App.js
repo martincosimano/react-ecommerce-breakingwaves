@@ -78,7 +78,21 @@ export default function App() {
 
     setCartItems((prevCartItems) => [...prevCartItems, updatedItem]);
   }
+
+  // User functionality
+  const [isLogged, setIsLogged] = React.useState(false);
+
+  React.useEffect(() => {
+    const user = localStorage.getItem('user');
+    if (user) {
+      setIsLogged(true);
+    }
+  }, []);
   
+  function logOut() {
+    localStorage.removeItem('user');
+    setIsLogged(false);
+  }
 
   return (
     <>
@@ -88,6 +102,8 @@ export default function App() {
           groupedItems={groupedItems}
           totalPrice={totalPrice}
           removeFromCart={removeFromCart}
+          isLogged={isLogged}
+          logOut={logOut}
         />
         <ScrollToTop />
         <Routes>
@@ -110,7 +126,11 @@ export default function App() {
               />
             }
           />
-          <Route path="/account" element={<Account />} />
+          <Route path="/account" 
+          element={
+          <Account
+            setIsLogged={setIsLogged}
+           />} />
         </Routes>
         <PreFooter />
         <Footer />

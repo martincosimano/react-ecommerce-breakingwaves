@@ -11,6 +11,8 @@ export default function Header(props) {
                 groupedItems={props.groupedItems} 
                 totalPrice={props.totalPrice} 
                 removeFromCart={props.removeFromCart}
+                isLogged={props.isLogged}
+                logOut={props.logOut}
             />
         </div>
     </header>

@@ -75,7 +75,10 @@ export default function Navbar(props) {
                   </div>
                   <ul className="nav-ul">
                     <li>
+                      {props.isLogged ? 
+                      <Link to="/account" className="nav-anchor" onClick={props.logOut}>Log Out</Link> :
                       <Link to="/account" className="nav-anchor">Log In/Register</Link>
+                      }
                     </li>
                     <li>
                       <Link to="/cart" className="nav-cart nav-anchor"><FaIcons.FaShoppingCart/></Link>
@@ -103,6 +106,8 @@ export default function Navbar(props) {
                 categories={navSidebarData}
                 isNav={true}
                 cartItems={props.cartItems.length}
+                isLogged={props.isLogged}
+                logOut={props.logOut}
               />
             </div>
           )}

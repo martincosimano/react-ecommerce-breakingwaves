@@ -1,7 +1,10 @@
 import React from "react";
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
-export default function Login() {
+export default function Login(props) {
+    const navigate = useNavigate();
+
     const [formData, setFormData] = React.useState({
         email: '',
         password: ''
@@ -18,20 +21,24 @@ export default function Login() {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-
+      
         const userData = {
-            email,
-            password
-        }
-
+          email,
+          password
+        };
+      
         try {
             const response = await axios.post('/api/users/login', userData);
-            console.log(response.data);
+            if (response.data) {
+              localStorage.setItem('user', JSON.stringify(response.data));
+              props.setIsLogged(true);
+              navigate('/');
+            }
           } catch (error) {
             console.error(error);
+            props.setIsLogged(false);
           }
-
-    }
+      };
 
     return (
     <div className="login-container">

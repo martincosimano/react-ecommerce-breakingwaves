@@ -3,11 +3,13 @@ import Login from "../components/Account/Login";
 import Register from "../components/Account/Register";
 import "../styles/routes/account.css"
 
-export default function Account() {
+export default function Account(props) {
     return (
         <main className="account-main">
             <div className="account-container">
-                <Login />
+                <Login 
+                    setIsLogged={props.setIsLogged}
+                />
                 <Register />
             </div>
         </main>
