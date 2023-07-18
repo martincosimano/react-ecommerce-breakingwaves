@@ -14,11 +14,11 @@ export default function Footer() {
                 </div>
                 <nav className="nav-footer">
                     <ul className="nav-ul">
-                        <li><a href="" className="nav-footer--icons"><BsIcons.BsFacebook/></a></li>
-                        <li><a href="" className="nav-footer--icons"><BsIcons.BsTwitter/></a></li>
-                        <li><a href="" className="nav-footer--icons"><BsIcons.BsInstagram/></a></li>
-                        <li><a href="" className="nav-footer--icons"><BsIcons.BsEnvelope/></a></li>
-                        <li><a href="" className="nav-footer--icons"><BsIcons.BsMap/></a></li>
+                        <li><a href="#" className="nav-footer--icons"><BsIcons.BsFacebook/></a></li>
+                        <li><a href="#" className="nav-footer--icons"><BsIcons.BsTwitter/></a></li>
+                        <li><a href="#" className="nav-footer--icons"><BsIcons.BsInstagram/></a></li>
+                        <li><a href="#" className="nav-footer--icons"><BsIcons.BsEnvelope/></a></li>
+                        <li><a href="#" className="nav-footer--icons"><BsIcons.BsMap/></a></li>
                     </ul>
                 </nav>
                 <div className="container-copyright">

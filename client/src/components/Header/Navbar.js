@@ -32,7 +32,7 @@ export default function Navbar(props) {
             <div className="nav-container">
               <div className="logo-container">
               <Link to="/">
-                <img src={require("../../assets/images/logo.png")} alt=""/>
+                <img src={require("../../assets/images/logo.png")} alt="Brand logo"/>
               </ Link>
               </div>
               <nav className="nav-header">

@@ -49,7 +49,7 @@ export default function Sidebar(props) {
           <h3 className={props.isNav ? "sidebar-title sidebar-nav decorated" : "sidebar-title shop decorated"}>{props.title}</h3>
           <ul className="sidebar-categories">
             {categoryElements}
-            {accountElement}
+            {props.isNav ? accountElement : null}
           </ul>
         </aside>
       </nav>
