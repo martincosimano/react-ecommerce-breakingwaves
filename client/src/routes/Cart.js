@@ -13,7 +13,7 @@ export default function Cart(props) {
     city: "",
     address: ""
   });
-  const [formSubmitted, setFormSubmitted] = React.useState(false);
+  const [validationError, setValidationError] = React.useState('');
 
   function openModal() {
     const isFormValid = validateForm();
@@ -22,147 +22,122 @@ export default function Cart(props) {
     }
     setModal((prevModal) => !prevModal);
   }
+
   function validateForm() {
-    const updatedFormData = {};
-
-    for (const field of Object.keys(formData)) {
-      if (!formData[field]) {
-        updatedFormData[field] = "";
-      } else {
-        updatedFormData[field] = formData[field];
-      }
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.city || !formData.address) {
+      setValidationError('Please fill in all required fields.');
+      return false;
+    } else {
+      setValidationError('');
+      return true;
     }
-
-    setFormData(updatedFormData);
-    return Object.values(updatedFormData).every(Boolean);
   }
 
   function handleChange(event) {
-    const {name, value} = event.target;
+    const { name, value } = event.target;
     setFormData(prevFormData => ({
       ...prevFormData,
       [name]: value
     }))
   }
 
-  function handleButtonClick() {
-    setFormSubmitted(true);
+  function onSubmit() {
     openModal();
   }
 
-    return (
-        <main className="cart-main">
-            <div className="container">
-            {props.totalPrice ? 
-              (<div className="split-grid">
-                  <div className="cart-items">
-                    <div className="cart-category-items">
-                        <h5 className="cart-product-title">Product</h5>
-                        <h5 className="cart-product-price">Price</h5>
-                        <h5 className="cart-product-quantity">Quantity</h5>
-                    </div>
-                    {Object.entries(props.groupedItems).map(([key, { count, price, smallImg, id }]) => (
-                    <CartList
-                        key={id}
-                        item={key}
-                        price={`${Number(price * count).toFixed(2)}`}
-                        smallImg={smallImg}
-                        removeFromCart={() => props.removeFromCart(key)}
-                        sumToCart={() => props.sumToCart({ id, productName: key, productPrice: price, productImage: smallImg })}
-                        isCartRoute={true}
-                        countItems={count}
-                    />
-                    ))}
-                  </div>
-                  
-                  <div className="cart-summary">
-                    <h4 className="cart-summary-title">Order Summary ({props.cartItems.length} {props.cartItems.length > 1 ? 'Items' : 'Item'})</h4>
-                    <form className="cart-summary-form">
-                    <label className="cart-form-label" htmlFor="firstName">First name *</label>
-                    <input
-                      id="firstName"
-                      type="text"
-                      placeholder="First Name"
-                      name="firstName"
-                      value={formData.firstName}
-                      onChange={handleChange}
-                      className={!formData.firstName && formSubmitted ? "empty-field" : ""}
-                    />
-                    {!formData.firstName && formSubmitted && (
-                      <p className="error-message">First name is required.</p>
-                    )}
-                    <label className="cart-form-label" htmlFor="lastName">Last name *</label>
-                    <input
-                      id="lastName"
-                      type="text"
-                      placeholder="Last Name"
-                      name="lastName"
-                      value={formData.lastName}
-                      onChange={handleChange}
-                      className={!formData.lastName && formSubmitted ? "empty-field" : ""}
-                    />
-                    {!formData.lastName && formSubmitted && (
-                      <p className="error-message">Last name is required.</p>
-                    )}
-
-                    <label className="cart-form-label" htmlFor="email">Email *</label>
-                    <input
-                      id="email"
-                      type="email"
-                      placeholder="Email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className={!formData.email && formSubmitted ? "empty-field" : ""}
-                    />
-                    {!formData.email && formSubmitted && (
-                      <p className="error-message">Email address is required.</p>
-                    )}
-                    <label className="cart-form-label" htmlFor="city">City *</label>
-                    <input
-                      id="city"
-                      type="text"
-                      placeholder="City"
-                      name="city"
-                      value={formData.city}
-                      onChange={handleChange}
-                      className={!formData.city && formSubmitted ? "empty-field" : ""}
-                    />
-                    {!formData.city && formSubmitted && (
-                      <p className="error-message">City is required.</p>
-                    )}
-                    <label className="cart-form-label" htmlFor="address">Address *</label>
-                    <input
-                      id="address"
-                      type="text"
-                      placeholder="Address"
-                      name="address"
-                      value={formData.address}
-                      onChange={handleChange}
-                      className={!formData.address && formSubmitted ? "empty-field" : ""}
-                    />
-                    {!formData.address && formSubmitted && (
-                      <p className="error-message">Address is required.</p>
-                    )}
-                  </form>
-                    <p className="cartlist-total-price">Total: ${props.totalPrice.toFixed(2)}</p>
-                    <button className="btn-black" onClick={handleButtonClick}>Proceed to Checkout</button>
-                  </div>
-                  <Modal 
-                  modal={modal} 
-                  setModal={setModal}
-                  totalPrice={props.totalPrice.toFixed(2)}
-                  firstName={formData.firstName}
-                  lastName={formData.lastName}
-                  email={formData.email}
-                  city={formData.city}
-                  address={formData.address}
-                  />
-                </div>) : 
-                (
-                <EmptyCart />
-                )}
+  return (
+    <main className="cart-main">
+      <div className="container">
+        {props.totalPrice ?
+          (<div className="split-grid">
+            <div className="cart-items">
+              <div className="cart-category-items">
+                <h5 className="cart-product-title">Product</h5>
+                <h5 className="cart-product-price">Price</h5>
+                <h5 className="cart-product-quantity">Quantity</h5>
+              </div>
+              {Object.entries(props.groupedItems).map(([key, { count, price, smallImg, id }]) => (
+                <CartList
+                  key={id}
+                  item={key}
+                  price={`${Number(price * count).toFixed(2)}`}
+                  smallImg={smallImg}
+                  removeFromCart={() => props.removeFromCart(key)}
+                  sumToCart={() => props.sumToCart({ id, productName: key, productPrice: price, productImage: smallImg })}
+                  isCartRoute={true}
+                  countItems={count}
+                />
+              ))}
             </div>
-        </main>
-    )
+
+            <div className="cart-summary">
+              <h4 className="cart-summary-title">Order Summary ({props.cartItems.length} {props.cartItems.length > 1 ? 'Items' : 'Item'})</h4>
+              <form className="cart-summary-form">
+                <label className="cart-form-label" htmlFor="firstName">First name *</label>
+                <input
+                  id="firstName"
+                  type="text"
+                  placeholder="First Name"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                />
+                <label className="cart-form-label" htmlFor="lastName">Last name *</label>
+                <input
+                  id="lastName"
+                  type="text"
+                  placeholder="Last Name"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                />
+                <label className="cart-form-label" htmlFor="email">Email *</label>
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                />
+                <label className="cart-form-label" htmlFor="city">City *</label>
+                <input
+                  id="city"
+                  type="text"
+                  placeholder="City"
+                  name="city"
+                  value={formData.city}
+                  onChange={handleChange}
+                />
+                <label className="cart-form-label" htmlFor="address">Address *</label>
+                <input
+                  id="address"
+                  type="text"
+                  placeholder="Address"
+                  name="address"
+                  value={formData.address}
+                  onChange={handleChange}
+                />
+              </form>
+              {validationError && <p className="error-message">{validationError}</p>}
+              <p className="cartlist-total-price">Total: ${props.totalPrice.toFixed(2)}</p>
+              <button className="btn-black" onClick={onSubmit}>Proceed to Checkout</button>
+            </div>
+            <Modal
+              modal={modal}
+              setModal={setModal}
+              totalPrice={props.totalPrice.toFixed(2)}
+              firstName={formData.firstName}
+              lastName={formData.lastName}
+              email={formData.email}
+              city={formData.city}
+              address={formData.address}
+            />
+          </div>) :
+          (
+            <EmptyCart />
+          )}
+      </div>
+    </main>
+  )
 }

@@ -10,6 +10,8 @@ export default function Login(props) {
         password: ''
     });
 
+    const [validationError, setValidationError] = React.useState('');
+
     const {email, password} = formData;
 
     const onChange = (e) => {
@@ -21,24 +23,29 @@ export default function Login(props) {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-      
+
+        if (!email || !password) {
+            setValidationError("Please enter both email and password.");
+            return;
+        }
+
         const userData = {
-          email,
-          password
+            email,
+            password
         };
-      
+
         try {
             const response = await axios.post('https://breakingwaves.onrender.com/api/users/login', userData);
             if (response.data) {
-              localStorage.setItem('user', JSON.stringify(response.data));
-              props.setIsLogged(true);
-              navigate('/');
+                localStorage.setItem('user', JSON.stringify(response.data));
+                props.setIsLogged(true);
+                navigate('/');
             }
-          } catch (error) {
+        } catch (error) {
             console.error(error);
             props.setIsLogged(false);
-          }
-      };
+        }
+    };
 
     return (
     <div className="login-container">
@@ -60,13 +67,14 @@ export default function Login(props) {
                 <label className="account-label">Password *</label>                    
                     <input
                     className="account-input" 
-                    type="text"
+                    type="password"
                     id="password" 
                     name="password" 
                     value={password}
                     placeholder="Password"
                     onChange={onChange}
                 />
+                {validationError && <p className="error-message">{validationError}</p>}
                 <button className="btn-black account-btn" onClick={onSubmit}><span>Log In</span></button>                        
             </form>
         </div>
