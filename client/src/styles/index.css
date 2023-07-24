@@ -113,6 +113,12 @@ footer {
   left: 0;
   background-color: #0098e2;
 }
+.error-message {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-400);
+  font-weight: bold;
+  color: #cc0d0d;
+}
 /******************************************
 /* MEDIA QUERY
 /*******************************************/
