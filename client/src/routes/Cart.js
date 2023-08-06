@@ -132,6 +132,11 @@ export default function Cart(props) {
               email={formData.email}
               city={formData.city}
               address={formData.address}
+              // items={Object.entries(props.groupedItems).map(([key, { count, price, smallImg, id }]) => (
+              //   <>
+              //     <p>{count}x {key}</p>
+              //   </>
+              // ))}
             />
           </div>) :
           (

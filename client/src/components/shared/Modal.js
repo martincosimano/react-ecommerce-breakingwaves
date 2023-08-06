@@ -22,6 +22,7 @@ export default function Modal(props) {
                         <p><span>Email:</span> {props.email}</p>
                         <p><span>City:</span> {props.city}</p>
                         <p><span>Address:</span> {props.address}</p>
+                        {/* <p><span>Items:</span> {props.items}</p> */}
                     </div>
                     <div className="modal-price-container">
                         <p className="modal-price">Total Price: {props.totalPrice}</p>
