@@ -11,7 +11,7 @@ connectDB();
 const app = express();
 
 app.use(cors({
-    origin: 'https://breakingwaves.onrender.com'
+    origin: 'https://breakingwaves.vercel.app'
 }));
 
 app.use(express.json());

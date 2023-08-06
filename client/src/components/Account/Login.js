@@ -44,7 +44,7 @@ export default function Login(props) {
         } catch (error) {
             console.error(error);
             props.setIsLogged(false);
-            setValidationError("Invalid credentials")
+            setValidationError("Invalid credentials.")
         }
     };
 

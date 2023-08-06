@@ -48,7 +48,7 @@ export default function Register() {
                 console.log(response.data);
                 navigate('/');
             } catch (error) {
-                setValidationError('User already exists')
+                setValidationError('User already exists.')
                 console.error(error);
             }
         }
