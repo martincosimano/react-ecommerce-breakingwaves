@@ -42,7 +42,7 @@ export default function Login(props) {
                 navigate('/');
             }
         } catch (error) {
-            console.error(error);
+            // console.error(error);
             props.setIsLogged(false);
             setValidationError("Invalid credentials.")
         }

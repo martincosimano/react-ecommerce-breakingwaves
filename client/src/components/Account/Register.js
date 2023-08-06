@@ -45,11 +45,11 @@ export default function Register() {
 
             try {
                 const response = await axios.post('https://breakingwaves.onrender.com/api/users', userData);
-                console.log(response.data);
+                // console.log(response.data);
                 navigate('/');
             } catch (error) {
                 setValidationError('User already exists.')
-                console.error(error);
+                // console.error(error);
             }
         }
     }

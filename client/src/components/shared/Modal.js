@@ -6,7 +6,7 @@ export default function Modal(props) {
 
     function closeModal() {
         props.setModal(prevModal => !prevModal)
-        console.log(props.modal)
+        // console.log(props.modal)
     }
 
     return (
