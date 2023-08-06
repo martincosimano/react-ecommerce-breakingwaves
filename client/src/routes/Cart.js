@@ -3,6 +3,7 @@ import CartList from '../components/shared/CartList';
 import EmptyCart from '../components/Cart/EmptyCart';
 import Modal from '../components/shared/Modal';
 import '../styles/routes/cart.css';
+import axios from 'axios';
 
 export default function Cart(props) {
   const [modal, setModal] = React.useState(false)
@@ -41,9 +42,27 @@ export default function Cart(props) {
     }))
   }
 
-  function onSubmit() {
+  const onSubmit = async (e) => {
+    e.preventDefault();
     openModal();
-  }
+
+    const items = Object.entries(props.groupedItems).map(([key, { count }]) => `${count}x ${key}`);
+
+        const orderData = {
+          name: `${formData.firstName} ${formData.lastName}`,
+          email: formData.email,
+          city: formData.city,
+          address: formData.address,
+          items: items.join(', '),
+          total: props.totalPrice.toFixed(2)
+        };
+
+        try {
+            const response = await axios.post('https://breakingwaves.onrender.com/api/orders/register', orderData);
+        } catch (error) {
+            setValidationError('Please fill in all required fields.');
+        }
+    }
 
   return (
     <main className="cart-main">
@@ -132,11 +151,6 @@ export default function Cart(props) {
               email={formData.email}
               city={formData.city}
               address={formData.address}
-              // items={Object.entries(props.groupedItems).map(([key, { count, price, smallImg, id }]) => (
-              //   <>
-              //     <p>{count}x {key}</p>
-              //   </>
-              // ))}
             />
           </div>) :
           (
