@@ -50,24 +50,34 @@ const registerUser = asyncHandler(async (req, res) => {
 // @route POST /api/users/login
 // @access Public
 const loginUser = asyncHandler(async (req, res) => {
-    const {email, password} = req.body;
-
-    // Check for user email
-    const user = await User.findOne({email});
-
-    if (user && (await bcrypt.compare(password, user.password))) {
-        res.json({
-            _id: user.id,
-            name: user.name,
-            email: user.email,
-            token: generateToken(user._id)
-        })
+    const { email, password } = req.body;
+  
+    // Find the user by email in the database
+    const user = await User.findOne({ email });
+  
+    // Check if the user exists and the password matches
+    if (user && (await user.matchPassword(password))) {
+      // Create the payload for the JWT token
+      const tokenPayload = {
+        id: user._id,
+        isAdmin: user.isAdmin,
+      };
+  
+      // Sign the token with the payload
+      const token = jwt.sign(tokenPayload, process.env.JWT_SECRET, { expiresIn: '1h' });
+  
+      res.json({
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        isAdmin: user.isAdmin,
+        token, // Send the token back in the response
+      });
     } else {
-        res.status(400);
-        throw new Error('Invalid credentials');
+      res.status(401);
+      throw new Error('Invalid email or password');
     }
-})
-
+  });
 // @desc Get user data
 // @route GET /api/users/me
 // @access Private

@@ -7,21 +7,18 @@ const protect = asyncHandler(async (req, res, next) => {
 
   if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
     try {
-      // Get token from header
       token = req.headers.authorization.split(' ')[1];
 
       // Verify token
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-      // Get user from the token
+      // Get user from the database based on the decoded user ID
       const user = await User.findById(decoded.id).select('-password');
 
-      if (user.email === 'admin@admin.com') {
-        // If the user's email is "admin@admin.com," continue to the next middleware
+      if (user) {
         req.user = user;
         next();
       } else {
-        // If the user's email is not "admin@admin.com," throw an error
         res.status(401);
         throw new Error('Not authorized');
       }
@@ -38,4 +35,13 @@ const protect = asyncHandler(async (req, res, next) => {
   }
 });
 
-module.exports = { protect };
+const isAdmin = (req, res, next) => {
+  if (req.user && req.user.isAdmin) {
+    next();
+  } else {
+    res.status(403);
+    throw new Error('Not authorized');
+  }
+};
+
+module.exports = { protect, isAdmin };
