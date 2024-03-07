@@ -28,10 +28,10 @@ export const shopSidebarData = [
     },
     {
         id: 5,
-        title: "Accesories",
-        path: "/shop/accesories",
+        title: "Accessories",
+        path: "/shop/accessories",
         cName: "shop",
-        category: "accesories"
+        category: "accessories"
     },
     {
         id: 6,
